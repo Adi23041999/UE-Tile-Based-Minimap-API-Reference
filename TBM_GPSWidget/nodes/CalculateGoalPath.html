@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>Calculate Goal Path</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style" href="../TBM_GPSWidget.html">TBM_GPSWidget</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">Calculate Goal Path</a>
+      <h1 class="title_style">Calculate Goal Path</h1>
+      <p>Calculates the GPS path points to be draw on the minimap. Should be overriden for desired behavior.</p>
+      <img src="../img/nd_img_CalculateGoalPath.png" />
+      <h3 class="title_style">Inputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Target</div>
+              <div class="param_type">TBM GPSWidget Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Start</div>
+              <div class="param_type">Vector</div>
+            </td>
+            <td>
+              <p>the starting location of the path (eg. player location)</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">End</div>
+              <div class="param_type">Vector</div>
+            </td>
+            <td>
+              <p>the target location</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="title_style">Outputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Out 2DPath</div>
+              <div class="param_type">Array of Vector 2D Structures</div>
+            </td>
+            <td>
+              <p>the calculated path as an array of points to be displayed on the minimap widget</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Return Value</div>
+              <div class="param_type">Boolean</div>
+            </td>
+            <td>
+              <p>true if a valid path was calculated</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_TileGridWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_TileGridWidget</a>
+      <h1 class="title_style">TBM_TileGridWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_TileGridWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_TileGridWidget</i>
+      </p>
+      <p>Base class responsible for loading and displaying the minimap tiles in a grid</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">AffectsBlipTransform</td>
+            <td width="60%">Affects Blip Transform:
+Whether the blips are also affected due to transfrom updates of this widget (ie. blip widgets are attached to this widget)
+If true the minimap skips some blip transform calculations
+Should be false on material based grids</td>
+          </tr>
+          <tr>
+            <td width="20%">UCanvasPanel*</td>
+            <td width="20%">AreaBlipCanvas</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">CurrentOffset</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">CurrentTilt</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">UTBM_GPSWidget*</td>
+            <td width="20%">GPSWidget</td>
+            <td width="60%">GPSWidget:
+GPS widget</td>
+          </tr>
+          <tr>
+            <td width="20%">UScaleBox*</td>
+            <td width="20%">GridScaleBox</td>
+            <td width="60%">Grid Scale Box:
+Required to keep the gird's proper ratio (set Strech to None)</td>
+          </tr>
+          <tr>
+            <td width="20%">USizeBox*</td>
+            <td width="20%">GridSizeBox</td>
+            <td width="60%">Grid Size Box:
+Required for setting the widget size</td>
+          </tr>
+          <tr>
+            <td width="20%">ESlateVisibility</td>
+            <td width="20%">GridVisibility</td>
+            <td width="60%">Grid Visibility:
+Default grid visibility</td>
+          </tr>
+          <tr>
+            <td width="20%">ESlateVisibility</td>
+            <td width="20%">HiddenVisibility</td>
+            <td width="60%">Hidden Visibility:
+Visibility setting when the grid is hidden</td>
+          </tr>
+          <tr>
+            <td width="20%">UImage*</td>
+            <td width="20%">LQImage</td>
+            <td width="60%">LQImage:
+The widget that holds the low quality single image of the grid</td>
+          </tr>
+          <tr>
+            <td width="20%">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
+            <td width="20%">MinimapWidget</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">NextLoadImmediate</td>
+            <td width="60%">Next Load Immediate:
+If true tile textures will be loaded synchronously (can cause a hitch)</td>
+          </tr>
+          <tr>
+            <td width="20%">UOverlay*</td>
+            <td width="20%">ParentOverlay</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">TileWidgets</td>
+            <td width="60%">Tile Widgets:
+Constructed tile widgets by tile ID</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/OnGridInit.html">Event On Grid Init</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

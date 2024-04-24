@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_BlipWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_BlipWidget</a>
+      <h1 class="title_style">TBM_BlipWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_BlipWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_BlipWidget</i>
+      </p>
+      <p>Customized blip widget</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">BlipDistanceRatio</td>
+            <td width="60%">Blip Distance Ratio:
+Current distance from the minimap center to it's border in 0-1 range</td>
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;UImage&gt;</td>
+            <td width="20%">BlipImageWidget</td>
+            <td width="60%">Blip Image Widget:
+Cached image widget (from FindBlipImageWidget function)</td>
+          </tr>
+          <tr>
+            <td width="20%">FName</td>
+            <td width="20%">BlipName</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;UUserWidget&gt;</td>
+            <td width="20%">BlipToolTipWidget</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TSubclassOf&lt;UUserWidget&gt; </td>
+            <td width="20%">BlipToolTipWidgetClass</td>
+            <td width="60%">Blip Tool Tip Widget Class:
+The widget to show when the blip is hovered onto by the cursor. Set to nullptr to disable</td>
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">CanInteract</td>
+            <td width="60%">Can Interact:
+Whether the blip can be interacted with (recieve input)</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">HeightSwitch</td>
+            <td width="60%">Height Switch:
+Whether the blip is level with, below or above the player.
+0.0f - level,
+0.5f - below,
+1.0f - above</td>
+          </tr>
+          <tr>
+            <td width="20%">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
+            <td width="20%">Minimap</td>
+            <td width="60%">Minimap:
+The owner minimap of this blip widget</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/CanInteract.html">Can Interact</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindBlipImageWidget.html">Event Find Blip Image Widget</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HeightSwitchEffect.html">Event Height Switch Effect</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetupBlip.html">Event Setup Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetupBlipToolTip.html">Event Setup Blip Tool Tip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateBlip.html">Event Update Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipName.html">Get Blip Name</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetPlayerBlipComponent.html">Get Player Blip Component</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UnhandleIfPanningKey.html">Unhandle if Panning Key</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

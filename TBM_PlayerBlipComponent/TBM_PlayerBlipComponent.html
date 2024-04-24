@@ -1,0 +1,318 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_PlayerBlipComponent</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_PlayerBlipComponent</a>
+      <h1 class="title_style">TBM_PlayerBlipComponent</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/Extras/TBM_PlayerBlipComponent.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; ActorComponent &gt; TBM_PlayerBlipComponent</i>
+      </p>
+      <p>Manages player related blips, should be added to PlayerState for proper replication</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">AdjustPositionAfterTeleport</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasicMarker</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasicNorth</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasicPlayer</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasicSearchRadius</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasicWaypoint</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataDynamic</td>
+            <td width="20%">BlipDataDynamicPlayer</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataDynamic</td>
+            <td width="20%">BlipDataDynamicSearchRadius</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipQuery</td>
+            <td width="20%">BlipQuery</td>
+            <td width="60%">Blip Query:
+Blip query setup. Allows the player to display different sets of blip on the menu map widget using the BlipQuery widget</td>
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTagMarkerBase</td>
+            <td width="60%">Blip Tag Marker Base:
+Used as the base of the marker blip name so final blip name is BlipTagMarkerBase_XX where XX is the marker ID</td>
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTagNorth</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTagSearchRadius</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTagToggleEffect</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTagWaypoint</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FLinearColor</td>
+            <td width="20%">CachedCustomColor</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">CanToggleBlipEffects</td>
+            <td width="60%">Can Toggle Blip Effects:
+Whether the player can toggle blip effects. eg make blips sticky by clicking on them</td>
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;APawn&gt;</td>
+            <td width="20%">ControlledPawn</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">HasWaypoint</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">int32</td>
+            <td width="20%">MaxNumberedMarkerID</td>
+            <td width="60%">Max Numbered Marker ID:
+Max amount of numbered markers the player can add</td>
+          </tr>
+          <tr>
+            <td width="20%">ETBM_MinimapRotationDirection</td>
+            <td width="20%">NorthDirection</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">NumberedMarkerIDs</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FName</td>
+            <td width="20%">OldPlayerBlipID</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FName</td>
+            <td width="20%">PlayerBlipID</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">ToggledBlips</td>
+            <td width="60%">Toggled Blips:
+Keeps track of the blips that had their effects toggled. Tag is the original non effect before change</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">WaypointRadius</td>
+            <td width="60%">Waypoint Radius:
+Waypoint removal range; if the player is within it the waypoint is automatically removed</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/AddNorthBlip.html">Add North Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddNumberedMarker.html">Add Numbered Marker</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddPlayerBlip.html">Add Player Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddWaypointBlip.html">Add Waypoint Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CanToggleEffects.html">Can Toggle Effects</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddNorthBlip.html">Event Add North Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddNumberedMarker.html">Event Add Numbered Marker</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddPlayerBlip.html">Event Add Player Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddWaypointBlip.html">Event Add Waypoint Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnKeyDown.html">Event On Key Down</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnKeyUp.html">Event On Key Up</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/TeleportToBlip.html">Event Teleport to Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ToggleBlipEffects.html">Event Toggle Blip Effects</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UniqueIDUpdated.html">Event Unique IDUpdated</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdatePawn.html">Event Update Pawn</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateSearchRadius.html">Event Update Search Radius</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindSearchRadius.html">Find Search Radius</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindTeleportSpot.html">Find Teleport Spot</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipTransform.html">Get Blip Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetColorOverride.html">Get Color Override</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveNorthBlip.html">Remove North Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveNumberedMarkerBlip.html">Remove Numbered Marker Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemovePlayerBlip.html">Remove Player Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveWaypointBlip.html">Remove Waypoint Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ShouldStickSearchToPlayer.html">Should Stick Search to Player</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/TeleportPawn.html">Teleport Pawn</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/TeleportToBlip.html">Teleport to Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ToggleBlipEffects.html">Toggle Blip Effects</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UniqueIDUpdated.html">Unique IDUpdated</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdatePawn.html">Update Pawn</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateSearchRadius.html">Update Search Radius</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

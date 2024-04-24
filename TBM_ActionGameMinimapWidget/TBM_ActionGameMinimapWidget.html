@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_ActionGameMinimapWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_ActionGameMinimapWidget</a>
+      <h1 class="title_style">TBM_ActionGameMinimapWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_ActionGameMinimapWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget &gt; TBM_ActionGameMinimapWidget</i>
+      </p>
+      <p>Minimap that dynamically updates zoom and tilt based on player speed</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">double</td>
+            <td width="20%">DesiredTilt</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">double</td>
+            <td width="20%">DesiredZoom</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">PlayerSpeed</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">UBorder*</td>
+            <td width="20%">SafeZoneBorder</td>
+            <td width="60%">Safe Zone Border:
+We need a bit of padding to make sure material blips are displayed when on the edge of the minimap</td>
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">SkipSmoothInterpolation</td>
+            <td width="60%">Skip Smooth Interpolation:
+Set to true to force current zoom and tilt to the desired values skipping smooth interpolation</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_MinimapSpeedSettings</td>
+            <td width="20%">SpeedSettings</td>
+            <td width="60%">Speed Settings:
+Dynamic zoom and tilt settings</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/CanEnableSpeedTilt.html">Can Enable Speed Tilt</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CanEnableSpeedZoom.html">Can Enable Speed Zoom</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

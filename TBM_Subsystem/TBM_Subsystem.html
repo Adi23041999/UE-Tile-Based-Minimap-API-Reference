@@ -1,0 +1,309 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_Subsystem (Tile Based Minimap Subsystem)</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_Subsystem (Tile Based Minimap Subsystem)</a>
+      <h1 class="title_style">TBM_Subsystem (Tile Based Minimap Subsystem)</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_Subsystem.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Subsystem &gt; WorldSubsystem &gt; TickableWorldSubsystem &gt; TBM_Subsystem (Tile Based Minimap Subsystem)</i>
+      </p>
+      <p>TBM Subsystem is the central managing point of the plugin
+ - collects grid and blip data
+ - manages blips (icons) which then map widgets use as source for adding blip widgets
+ - keeps track of blip queries per player (used to filter displayed blips)
+ - keeps track of registered grids (for dynamic grid switching)
+ - shows/hides zones (used to highlight specific parts of the level on the map widgets)
+ - keeps track of the blips that specific players use as GPS target</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">BlipInfo</td>
+            <td width="60%">Blip Info:
+Collected blip setup info</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">BlipTransformInterpSpeed</td>
+            <td width="60%">Blip Transform Interp Speed:
+Blip transform interpolation speed. If &lt;= 0 plugin's settings default value is used</td>
+          </tr>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">ClientBlipsTransforms</td>
+            <td width="60%">Client Blips Transforms:
+Replicated blip locations and UI rotations</td>
+          </tr>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">EffectsInfo</td>
+            <td width="60%">Effects Info:
+Collected blip effects info</td>
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">GPSGoals</td>
+            <td width="60%">GPSGoals:
+GPS Goals (Blips that the GPS widget should consider when calculating the route).
+If multiple goals are present then the closest one is picked by the system.
+Additionally bGoalOverride can be set to true to pick only that single goal (eg. if the player added a waypoint on their map).
+Only one Goal Override should be present at the time.
+A goal is automatically cleared once the blip is removedw</td>
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">GPSStaticPaths</td>
+            <td width="60%">GPSStatic Paths:
+Static paths to be drawn along the goals</td>
+          </tr>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">MinimapInfo</td>
+            <td width="60%">Minimap Info:
+Collected minimap(grid) info</td>
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTagContainer</td>
+            <td width="20%">RegisteredGrids</td>
+            <td width="60%">Registered Grids:
+Currently registered grids (grids that map widgets can switch to)</td>
+          </tr>
+          <tr>
+            <td width="20%">TMap</td>
+            <td width="20%">ShownZones</td>
+            <td width="60%">Shown Zones:
+List of zones that should be displayed on map widgets.
+Key is the zone indentifier tag.
+Value is a list of colors. Usually there is only one color tag present but there could be a situation where multiple
+color tags are in the container. In that case the objects that listen for the zones need to implement a priority system</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipBasic.html">Add Blip Basic</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipBasicByTag.html">Add Blip Basic by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipDynamic.html">Add Blip Dynamic</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipDynamicByTag.html">Add Blip Dynamic by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipInfo.html">Add Blip Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlipQuery.html">Add Blip Query</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddClientBlipTransform.html">Add Client Blip Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddEffectsInfo.html">Add Effects Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddGoal.html">Add Goal</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddMinimapInfo.html">Add Minimap Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AddStaticPath.html">Add Static Path</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/BlipExists.html">Blip Exists</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/BlipExistsByTag.html">Blip Exists by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CheckBlipData.html">Check Blip Data</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipDataBasic.html">Get Blip Data Basic</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipDataBasicByTag.html">Get Blip Data Basic by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipInitialTransform.html">Get Blip Initial Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipInitialTransformByTag.html">Get Blip Initial Transform by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipLocation.html">Get Blip Location</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipLocationByTag.html">Get Blip Location by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipQuery.html">Get Blip Query</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipRotation.html">Get Blip Rotation</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipRotationByTag.html">Get Blip Rotation by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipTransform.html">Get Blip Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipTransformByTag.html">Get Blip Transform by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetGoals.html">Get Goals</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetStaticPaths.html">Get Static Paths</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HasGoal.html">Has Goal</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HasStaticPath.html">Has Static Path</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/HideZone.html">Hide Zone</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RegisterGrid.html">Register Grid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveBlip.html">Remove Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveBlipByTag.html">Remove Blip by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveClientBlipTransform.html">Remove Client Blip Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveGoal.html">Remove Goal</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveStaticPath.html">Remove Static Path</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ShowZone.html">Show Zone</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UnregisterGrid.html">Unregister Grid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateBlipData.html">Update Blip Data</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateBlipDataByTag.html">Update Blip Data by Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateQueryInstanceTag.html">Update Query Instance Tag</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateQuerySetupTag.html">Update Query Setup Tag</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

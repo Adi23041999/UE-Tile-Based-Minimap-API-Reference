@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_DeveloperSettings (Tile Based Minimap)</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_DeveloperSettings (Tile Based Minimap)</a>
+      <h1 class="title_style">TBM_DeveloperSettings (Tile Based Minimap)</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_DeveloperSettings.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; DeveloperSettings &gt; DeveloperSettingsBackedByCVars &gt; TBM_DeveloperSettings (Tile Based Minimap)</i>
+      </p>
+      <p>TBM Plugin settings</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">AllowBlipTeleport</td>
+            <td width="60%">Allow Blip Teleport:
+Whether blip teleport is allowed by default.
+NOTE: this affects shipping builds, in dev builds teleport is always allowed</td>
+          </tr>
+          <tr>
+            <td width="20%">TSoftObjectPtr&lt;UDataTable&gt;</td>
+            <td width="20%">BlipSetup</td>
+            <td width="60%">Blip Setup:
+Default blip info</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">BlipTransformInterpSpeed</td>
+            <td width="60%">Blip Transform Interp Speed:
+Interp speed for replicated blips</td>
+          </tr>
+          <tr>
+            <td width="20%">TSoftObjectPtr&lt;UDataTable&gt;</td>
+            <td width="20%">EffectsSetup</td>
+            <td width="60%">Effects Setup:
+Default blip effects info</td>
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTagContainer</td>
+            <td width="20%">InitialRegisteredGrids</td>
+            <td width="60%">Initial Registered Grids:
+Grids to register once the subsystem is initialized</td>
+          </tr>
+          <tr>
+            <td width="20%">TSoftObjectPtr&lt;UDataTable&gt;</td>
+            <td width="20%">MinimapSetup</td>
+            <td width="60%">Minimap Setup:
+Default minimap grid info</td>
+          </tr>
+          <tr>
+            <td width="20%">TSoftClassPtr&lt;UTBM_Subsystem&gt; </td>
+            <td width="20%">SubsystemtoInit</td>
+            <td width="60%">Subsystem to Init:
+The TBM subsystem to initialize</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody />
+      </table>
+    </div>
+  </body>
+</html>

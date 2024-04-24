@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_MarkerBlipComponent</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_MarkerBlipComponent</a>
+      <h1 class="title_style">TBM_MarkerBlipComponent</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/Extras/TBM_MarkerBlipComponent.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; ActorComponent &gt; SceneComponent &gt; PrimitiveComponent &gt; MeshComponent &gt; StaticMeshComponent &gt; TBM_MarkerBlipComponent</i>
+      </p>
+      <p>Adds a dynamic blip with optional 3D marker above the owner</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">FVector</td>
+            <td width="20%">AdditionalMarkerOffset</td>
+            <td width="60%">Additional Marker Offset:
+Offset of the marker 3D mesh</td>
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">AddonBeginPlay</td>
+            <td width="60%">Add on Begin Play:
+Whether to spawn the blip on BeginPlay</td>
+          </tr>
+          <tr>
+            <td width="20%">FName</td>
+            <td width="20%">AlternativeName</td>
+            <td width="60%">Alternative Name:
+Used if blip tag is empty. If this is also empty component path name is used</td>
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;USceneComponent&gt;</td>
+            <td width="20%">AttachComponent</td>
+            <td width="60%">Attach Component:
+The component to attach the marker to</td>
+          </tr>
+          <tr>
+            <td width="20%">FName</td>
+            <td width="20%">AttachSocket</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataBasic</td>
+            <td width="20%">BlipDataBasic</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipDataDynamic</td>
+            <td width="20%">BlipDataDynamic</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">BlipTag</td>
+            <td width="60%">Blip Tag:
+Blip name as a tag</td>
+          </tr>
+          <tr>
+            <td width="20%">int32</td>
+            <td width="20%">MarkerColorCustomPrimitiveIndex</td>
+            <td width="60%">Marker Color Custom Primitive Index:
+Used to pass the blip color the to marker's mesh material</td>
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;UStaticMesh&gt;</td>
+            <td width="20%">MarkerMesh</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">RemoveonEndPlay</td>
+            <td width="60%">Remove on End Play:
+Whether to remove the blip on EndPlay</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/AddBlip.html">Add Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AdjustMarkerPosition.html">Adjust Marker Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/AdjustMarkerPosition.html">Event Adjust Marker Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindAttachComponent.html">Event Find Attach Component</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateColor.html">Event Update Color</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindAttachComponent.html">Find Attach Component</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/RemoveBlip.html">Remove Blip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateColor.html">Update Color</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

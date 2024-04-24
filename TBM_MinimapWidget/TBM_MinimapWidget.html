@@ -1,0 +1,348 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_MinimapWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_MinimapWidget</a>
+      <h1 class="title_style">TBM_MinimapWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_MinimapWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget</i>
+      </p>
+      <p>Base class for map widgets</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">FGameplayTag</td>
+            <td width="20%">ActiveGrid</td>
+            <td width="60%">Active Grid:
+Currently active minimap grid</td>
+          </tr>
+          <tr>
+            <td width="20%">UBorder*</td>
+            <td width="20%">Background</td>
+            <td width="60%">Background:
+Optional map background</td>
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">BlipContexts</td>
+            <td width="60%">Blip Contexts:
+Blip information for this particular minimap widget (position, rotation, scale etc.)</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_GridTransform</td>
+            <td width="20%">GridTransform</td>
+            <td width="60%">Grid Transform:
+Current grid's transform info (position, rotation, zoom, tilt)</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_KeyBindings</td>
+            <td width="20%">KeyBindings</td>
+            <td width="60%">Key Bindings:
+Key bindings for blip interaction</td>
+          </tr>
+          <tr>
+            <td width="20%">TSet</td>
+            <td width="20%">LoadedTiles</td>
+            <td width="60%">Loaded Tiles:
+Currently loaded minimap tiles</td>
+          </tr>
+          <tr>
+            <td width="20%">UCanvasPanel*</td>
+            <td width="20%">MinimapCanvas</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">MinimapDimensions</td>
+            <td width="60%">Minimap Dimensions:
+Dimensions of the grid widget</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_MinimapSettings</td>
+            <td width="20%">MinimapSettings</td>
+            <td width="60%">Minimap Settings:
+SETTINGS</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">MinimapTick</td>
+            <td width="60%">Minimap Tick:
+Update rate of the minimap.
+NOTE: to update the minimap every game tick set this variable to current delta time and call OnMinimapTick() afterwards</td>
+          </tr>
+          <tr>
+            <td width="20%">FTimerHandle</td>
+            <td width="20%">MinimapTickTimerHandle</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">MinimapUISize</td>
+            <td width="60%">Minimap UISize:
+UI size of this minimap widget</td>
+          </tr>
+          <tr>
+            <td width="20%">FVector</td>
+            <td width="20%">MinimapWorldLocation</td>
+            <td width="60%">Minimap World Location:
+Actual world location of the minimap.
+NOTE: could be different to the origin location if map panning is implemented</td>
+          </tr>
+          <tr>
+            <td width="20%">FVector</td>
+            <td width="20%">OriginLocation</td>
+            <td width="60%">Origin Location:
+The source world location of the minimap eg. the player location</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_MinimapPerWidgetInfo</td>
+            <td width="20%">PerWidgetInfo</td>
+            <td width="60%">Per Widget Info:
+Cached info specified per widget parent class</td>
+          </tr>
+          <tr>
+            <td width="20%">URetainerBox*</td>
+            <td width="20%">RetainerBox</td>
+            <td width="60%">Retainer Box:
+Used for minimap mask (circle, rectangle)</td>
+          </tr>
+          <tr>
+            <td width="20%">UMaterialInstanceDynamic*</td>
+            <td width="20%">ShapeMaskDynamicMaterial</td>
+            <td width="60%">Shape Mask Dynamic Material:
+Current minimap mask material</td>
+          </tr>
+          <tr>
+            <td width="20%">UTBM_TileGridWidget*</td>
+            <td width="20%">TileGridWidget</td>
+            <td width="60%">Tile Grid Widget:
+The container of the grid</td>
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">TileLoaderTick</td>
+            <td width="60%">Tile Loader Tick:
+Update rate of the tile loader
+NOTE: to update the loader every game tick set this variable to current delta time and call OnTileLoaderTick() afterwards</td>
+          </tr>
+          <tr>
+            <td width="20%">FTimerHandle</td>
+            <td width="20%">TileLoaderTimerHandle</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">WorldDimensions</td>
+            <td width="60%">World Dimensions:
+World dimensions (Row&amp;Column * TileWorldSize)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/CacheMinimapSize.html">Cache Minimap Size</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CachePerWidgetInfo.html">Cache Per Widget Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ClampBlipPosition.html">Clamp Blip Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ConvertGridPosition.html">Convert Grid Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GridSwitch.html">Event Grid Switch</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnMaterialBlipUpdate.html">Event On Material Blip Update</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetBackgroundColor.html">Event Set Background Color</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetRotationMode.html">Event Set Rotation Mode</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetShape.html">Event Set Shape</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateGridTransform.html">Event Update Grid Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetActiveGrid.html">Get Active Grid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetAreaScaleFromWorld.html">Get Area Scale from World</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipPosition.html">Get Blip Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDefaultZoom.html">Get Default Zoom</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDistanceRatio.html">Get Distance Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDistanceToBorder.html">Get Distance to Border</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetGPSWorldToUIPoint.html">Get GPSWorld to UIPoint</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetGridInfo.html">Get Grid Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetGridTransform.html">Get Grid Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetMinimapUISize.html">Get Minimap UISize</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetMouseToGridRatio.html">Get Mouse to Grid Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetMouseToWorldLocation.html">Get Mouse to World Location</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetTileTexture.html">Get Tile Texture</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetUIToGridRatio.html">Get UITo Grid Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetUIToWorldLocation.html">Get UITo World Location</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetWorldLocationRatio.html">Get World Location Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetWorldToUICoords.html">Get World to UICoords</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnMinimapTick.html">On Minimap Tick</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnTileLoaderTick.html">On Tile Loader Tick</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetCenterOffset.html">Set Center Offset</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetRotationDirection.html">Set Rotation Direction</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetRotationMode.html">Set Rotation Mode</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetShape.html">Set Shape</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/SetTilt.html">Set Tilt</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ToggleRotationMode.html">Toggle Rotation Mode</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ToggleShape.html">Toggle Shape</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateGridInfo.html">Update Grid Info</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateGridTransform.html">Update Grid Transform</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

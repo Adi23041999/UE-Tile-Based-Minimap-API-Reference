@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_BlipQueryWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_BlipQueryWidget</a>
+      <h1 class="title_style">TBM_BlipQueryWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/Extras/TBM_BlipQueryWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_BlipQueryWidget</i>
+      </p>
+      <p>Allows cycling through the owner player's blip queries (to display different sets of blips)</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">HasQuery</td>
+            <td width="60%">Has Query:
+Whether the owner player controller has an active blip query</td>
+          </tr>
+          <tr>
+            <td width="20%">FTBM_BlipQuery</td>
+            <td width="20%">Query</td>
+            <td width="60%">Query:
+Cached query info</td>
+          </tr>
+          <tr>
+            <td width="20%">int32</td>
+            <td width="20%">QueryIndex</td>
+            <td width="60%">Query Index:
+Currently cycled query (QueryTags index)</td>
+          </tr>
+          <tr>
+            <td width="20%">TArray</td>
+            <td width="20%">QueryTags</td>
+            <td width="60%">Query Tags:
+Cached query tags (Query-&gt;BlipSetupTagQueries keys)</td>
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">ResetonDestruct</td>
+            <td width="60%">Reset on Destruct:
+Whether the blip query is reset to default one when the widget is removed</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/CycleBackward.html">Cycle Backward</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CycleForward.html">Cycle Forward</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/CacheQuery.html">Event Cache Query</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnQueryTagUpdated.html">Event On Query Tag Updated</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

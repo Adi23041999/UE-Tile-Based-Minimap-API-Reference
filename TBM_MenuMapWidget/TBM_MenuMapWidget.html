@@ -1,0 +1,170 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>TBM_MenuMapWidget</title>
+    <link rel="stylesheet" type="text/css" href="../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">TBM_MenuMapWidget</a>
+      <h1 class="title_style">TBM_MenuMapWidget</h1>
+      <h2 class="title_style">Class Details</h2>
+      <p>
+        <b>Defined in: </b>Public/TBM_MenuMapWidget.h</p>
+      <p>
+        <b>Hierarchy: </b>
+        <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget &gt; TBM_MenuMapWidget</i>
+      </p>
+      <p>Widget showing a big menu map with interactable blips</p>
+      <h2 class="title_style">Properties</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">BlipAddKeyHoldTime</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">TObjectPtr&lt;UTBM_BlipQueryWidget&gt;</td>
+            <td width="20%">BlipQueryWidget</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">CanOverscroll</td>
+            <td width="60%">Can Overscroll:
+Whether overscroll can be used (if mouse panning)</td>
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">CurrentMousePosition</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">CurrentPanningOffset</td>
+            <td width="60%">Current Panning Offset:
+Panning offset this frame</td>
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">DeltaMousePosition</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">HoldingBlipAddKey</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_MenuMapKeyBindings</td>
+            <td width="20%">MenuMapKeyBindings</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FTBM_MenuMapSettings</td>
+            <td width="20%">MenuMapSettings</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">double</td>
+            <td width="20%">NavigationZoom</td>
+            <td width="60%">Navigation Zoom:
+Current zoom from mouse wheel/keyboard/pad</td>
+          </tr>
+          <tr>
+            <td width="20%">ETBM_MenuMapPanningState</td>
+            <td width="20%">PanningState</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">float</td>
+            <td width="20%">PanningTime</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">PreviousMousePosition</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">bool</td>
+            <td width="20%">SkipSmoothInterpolation</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%">FVector2D</td>
+            <td width="20%">TotalPanningOffset</td>
+            <td width="60%" />
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="title_style">Nodes</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/ClampPanning.html">Clamp Panning</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnPanningStateChanged.html">Event On Panning State Changed</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/Quit.html">Event Quit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetKeyPanningDirMultiplier.html">Get Key Panning Dir Multiplier</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetKeyPanningNavDir.html">Get Key Panning Nav Dir</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetPanningDirFromNorthDir.html">Get Panning Dir from North Dir</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetPlayerBlipComponent.html">Get Player Blip Component</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsPanning.html">Is Panning</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsPanningKey.html">Is Panning Key</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnPanningStateChanged.html">On Panning State Changed</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/Quit.html">Quit</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateZoom.html">Update Zoom</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

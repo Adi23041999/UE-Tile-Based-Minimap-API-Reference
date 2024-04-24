@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+  <head>
+    <title>Show Zone</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
+  </head>
+  <body>
+    <div id="content_container">
+      <a class="navbar_style" href="../../index.html">TBM2_API_Reference</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style" href="../TBM_Subsystem.html">TBM_Subsystem (Tile Based Minimap Subsystem)</a>
+      <a class="navbar_style">&gt;</a>
+      <a class="navbar_style">Show Zone</a>
+      <h1 class="title_style">Show Zone</h1>
+      <p>Broadcasts a message with the intention of showing a zone on the minimap (eg. highlight a specific neighbourhood on the map)<br />NOTE: listening objects may recieve multiple tags with each one having it's own color tag<br />Users should setup a system where they pick up the best color tag to decide on final zone color</p>
+      <img src="../img/nd_img_ShowZone.png" />
+      <h3 class="title_style">Inputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">In</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Target</div>
+              <div class="param_type">Tile Based Minimap Subsystem Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Zone Tag</div>
+              <div class="param_type">Gameplay Tag Structure</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">Color Tag</div>
+              <div class="param_type">Gameplay Tag Structure</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="title_style">Outputs</h3>
+      <table>
+        <colgroup>
+          <col width="25%" />
+          <col width="75%" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param_name title_style">Out</div>
+              <div class="param_type">Exec</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
