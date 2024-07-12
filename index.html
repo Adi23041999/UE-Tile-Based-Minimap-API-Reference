@@ -486,9 +486,15 @@ Default setup query to apply when no other query is applied</td>
                 <tbody>
                   <tr>
                     <td width="20%">FGameplayTagContainer</td>
+                    <td width="20%">BlacklistedGridTags</td>
+                    <td width="60%">Blacklisted Grid Tags:
+The blip won't be displayed if the currently active grid is in this list</td>
+                  </tr>
+                  <tr>
+                    <td width="20%">TSet</td>
                     <td width="20%">BlacklistedGrids</td>
                     <td width="60%">Blacklisted Grids:
-The blip won't be displayed if the currently active grid is in this list</td>
+Additional FName list if not using tags</td>
                   </tr>
                   <tr>
                     <td width="20%">ETBM_BlipType</td>
@@ -1144,6 +1150,12 @@ The path to the folder containing the tile textures</td>
               <table>
                 <tbody>
                   <tr>
+                    <td width="20%">bool</td>
+                    <td width="20%">AdjustGPSPathThicknessbyZoom</td>
+                    <td width="60%">Adjust GPSPath Thickness by Zoom:
+Whether to scale GPS path widgth by minimap zoom</td>
+                  </tr>
+                  <tr>
                     <td width="20%">FGameplayTagQuery</td>
                     <td width="20%">BlipInstanceQuery</td>
                     <td width="60%">Blip Instance Query:
@@ -1180,9 +1192,15 @@ Mannually adjust the minimap edge distance (useful when the minimap mask is smal
 NOTE: X is for circle shape, Y and Z for rectangle shape</td>
                   </tr>
                   <tr>
+                    <td width="20%">FName</td>
+                    <td width="20%">MainGridName</td>
+                    <td width="60%">Main Grid Name:
+Alternative name if not using tags</td>
+                  </tr>
+                  <tr>
                     <td width="20%">FGameplayTag</td>
-                    <td width="20%">MainGrid</td>
-                    <td width="60%">Main Grid:
+                    <td width="20%">MainGridTag</td>
+                    <td width="60%">Main Grid Tag:
 The grid to use if no valid grid was found</td>
                   </tr>
                   <tr>
@@ -1356,6 +1374,11 @@ NOTE: usually GEngine-&gt;DefaultPhysMaterial is used if nothing is assigned in 
                     <td width="20%">LandscapeColors</td>
                     <td width="60%">Landscape Colors:
 Used on landscapes</td>
+                  </tr>
+                  <tr>
+                    <td width="20%">TEnumAsByte&lt;ETextureRenderTargetFormat&gt;</td>
+                    <td width="20%">RenderFormat</td>
+                    <td width="60%" />
                   </tr>
                   <tr>
                     <td width="20%">bool</td>
@@ -1539,6 +1562,20 @@ ETBM_MAX (ETBM MAX)</pre>
               <pre>Circle
 Rectangle
 Num
+ETBM_MAX (ETBM MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="25%">
+              <div class="param_name title_style">ETBM_PlayerBlipReplicationMethod</div>
+            </td>
+            <td width="50%">
+              <div>ETBM Player Blip Replication Method</div>
+            </td>
+            <td width="25%">
+              <pre>UniqueNetId
+PlayerId
+PlayerName
 ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>

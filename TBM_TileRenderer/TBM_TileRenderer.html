@@ -43,9 +43,9 @@ Only render actors that are subclass of one of the classes in the list</td>
 CALCULATED INFO</td>
           </tr>
           <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">ColorTag</td>
-            <td width="60%">Color Tag:
+            <td width="20%">FDataTableRowHandle</td>
+            <td width="20%">ColorID</td>
+            <td width="60%">Color ID:
 Optional; eg. we can have different color setups for the minimap and the menu map</td>
           </tr>
           <tr>
@@ -58,12 +58,6 @@ Optional; eg. we can have different color setups for the minimap and the menu ma
             <td width="20%">ComponentClassFilter</td>
             <td width="60%">Component Class Filter:
 Only render components that are subclass of one of the classes in the list</td>
-          </tr>
-          <tr>
-            <td width="20%">UDataTable*</td>
-            <td width="20%">DataTable</td>
-            <td width="60%">Data Table:
-The data table we write the calculated info to. Entry key name is the LevelTag name</td>
           </tr>
           <tr>
             <td width="20%">TArray</td>
@@ -99,18 +93,15 @@ Whether the saved image file tile ID should start at 00 or be offset. Should be 
 Defines the size of the map. Should encompass the level to be captured</td>
           </tr>
           <tr>
+            <td width="20%">FDataTableRowHandle</td>
+            <td width="20%">GridID</td>
+            <td width="60%">Grid ID:
+The data table we write the calculated info to</td>
+          </tr>
+          <tr>
             <td width="20%">FTransform</td>
             <td width="20%">GridTransform</td>
             <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">LevelTag</td>
-            <td width="60%">Level Tag:
-ID of the grid (level)
-Each grid should have its own unique tag
- - used as the entry name in the data table
- - used as the folder name for the captured images (the last part of the tag) See: GetCapturePath</td>
           </tr>
           <tr>
             <td width="20%">float</td>
@@ -122,11 +113,6 @@ Each grid should have its own unique tag
             <td width="20%">LockTransform</td>
             <td width="60%">Lock Transform:
 If true the actor can't be moved. Useful to prevent accidential movement</td>
-          </tr>
-          <tr>
-            <td width="20%">UDataTable*</td>
-            <td width="20%">RadarColors</td>
-            <td width="60%" />
           </tr>
           <tr>
             <td width="20%">bool</td>
