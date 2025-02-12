@@ -16,58 +16,58 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_BlipWidget</i>
       </p>
-      <p>Customized blip widget</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Customized blip widget</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">BlipDistanceRatio</td>
-            <td width="60%">Blip Distance Ratio:
-Current distance from the minimap center to it's border in 0-1 range</td>
+            <td width="20%" class="prop_type_style">TSubclassOf&lt;UUserWidget&gt; </td>
+            <td width="20%" class="prop_display_name_style">BlipToolTipWidgetClass</td>
+            <td width="60%">The widget to show when the blip is hovered onto by the cursor. Set to nullptr to disable</td>
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UImage&gt;</td>
-            <td width="20%">BlipImageWidget</td>
-            <td width="60%">Blip Image Widget:
-Cached image widget (from FindBlipImageWidget function)</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">CanInteract</td>
+            <td width="60%">Whether the blip can be interacted with (recieve input)</td>
           </tr>
           <tr>
-            <td width="20%">FName</td>
-            <td width="20%">BlipName</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UImage&gt;</td>
+            <td width="20%" class="prop_display_name_style">BlipImageWidget</td>
+            <td width="60%">Cached image widget (from FindBlipImageWidget function)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FName</td>
+            <td width="20%" class="prop_display_name_style">BlipName</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UUserWidget&gt;</td>
-            <td width="20%">BlipToolTipWidget</td>
+            <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">Minimap</td>
+            <td width="60%">The owner minimap of this blip widget</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UTBM_MenuMapWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">MenuMap</td>
+            <td width="60%">The owner minimap cast as menu map widget</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UUserWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">BlipToolTipWidget</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TSubclassOf&lt;UUserWidget&gt; </td>
-            <td width="20%">BlipToolTipWidgetClass</td>
-            <td width="60%">Blip Tool Tip Widget Class:
-The widget to show when the blip is hovered onto by the cursor. Set to nullptr to disable</td>
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">CanInteract</td>
-            <td width="60%">Can Interact:
-Whether the blip can be interacted with (recieve input)</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">HeightSwitch</td>
-            <td width="60%">Height Switch:
-Whether the blip is level with, below or above the player.
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">HeightSwitch</td>
+            <td width="60%">Whether the blip is level with, below or above the player.
 0.0f - level,
 0.5f - below,
 1.0f - above</td>
           </tr>
           <tr>
-            <td width="20%">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
-            <td width="20%">Minimap</td>
-            <td width="60%">Minimap:
-The owner minimap of this blip widget</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">BlipDistanceRatio</td>
+            <td width="60%">Current distance from the minimap center to it's border in 0-1 range</td>
           </tr>
         </tbody>
       </table>
@@ -101,7 +101,7 @@ The owner minimap of this blip widget</td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/UpdateBlip.html">Event Update Blip</a>
+              <a href="./nodes/GetBlipImageWidget.html">Get Blip Image Widget</a>
             </td>
           </tr>
           <tr>

@@ -16,141 +16,98 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget</i>
       </p>
-      <p>Base class for map widgets</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Base class for map widgets</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">FName</td>
-            <td width="20%">ActiveGrid</td>
-            <td width="60%">Active Grid:
-Currently active minimap grid</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UCanvasPanel&gt;</td>
+            <td width="20%" class="prop_display_name_style">MinimapCanvas</td>
+            <td width="60%">Main widget</td>
           </tr>
           <tr>
-            <td width="20%">UBorder*</td>
-            <td width="20%">Background</td>
-            <td width="60%">Background:
-Optional map background</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;URetainerBox&gt;</td>
+            <td width="20%" class="prop_display_name_style">RetainerBox</td>
+            <td width="60%">Used for minimap mask (circle, rectangle)</td>
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">BlipContexts</td>
-            <td width="60%">Blip Contexts:
-Blip information for this particular minimap widget (position, rotation, scale etc.)</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UBorder&gt;</td>
+            <td width="20%" class="prop_display_name_style">Background</td>
+            <td width="60%">Optional map background</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_GridTransform</td>
-            <td width="20%">GridTransform</td>
-            <td width="60%">Grid Transform:
-Current grid's transform info (position, rotation, zoom, tilt)</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UTBM_TileGridWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">TileGridWidget</td>
+            <td width="60%">The container of the grid</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_KeyBindings</td>
-            <td width="20%">KeyBindings</td>
-            <td width="60%">Key Bindings:
-Key bindings for blip interaction</td>
+            <td width="20%" class="prop_type_style">FTBM_MinimapSettings</td>
+            <td width="20%" class="prop_display_name_style">MinimapSettings</td>
+            <td width="60%">Holds the map widget settings</td>
           </tr>
           <tr>
-            <td width="20%">TSet</td>
-            <td width="20%">LoadedTiles</td>
-            <td width="60%">Loaded Tiles:
-Currently loaded minimap tiles</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">BlipContexts</td>
+            <td width="60%">Holds information for every blip widget for this particular map widget (position, rotation, scale etc.)</td>
           </tr>
           <tr>
-            <td width="20%">UCanvasPanel*</td>
-            <td width="20%">MinimapCanvas</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">MinimapTick</td>
+            <td width="60%">Current update rate of the minimap.
+NOTE: to update the minimap every game tick set this variable to be &lt;= 0.0</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTimerHandle</td>
+            <td width="20%" class="prop_display_name_style">MinimapTickTimerHandle</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">MinimapDimensions</td>
-            <td width="60%">Minimap Dimensions:
-Dimensions of the grid widget</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UMaterialInstanceDynamic&gt;</td>
+            <td width="20%" class="prop_display_name_style">ShapeMaskDynamicMaterial</td>
+            <td width="60%">Current minimap mask material</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_MinimapSettings</td>
-            <td width="20%">MinimapSettings</td>
-            <td width="60%">Minimap Settings:
-SETTINGS</td>
+            <td width="20%" class="prop_type_style">FTBM_MinimapPerWidgetInfo</td>
+            <td width="20%" class="prop_display_name_style">PerWidgetInfo</td>
+            <td width="60%">Cached grid info specified for this or parent widget class</td>
           </tr>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">MinimapTick</td>
-            <td width="60%">Minimap Tick:
-Update rate of the minimap.
-NOTE: to update the minimap every game tick set this variable to current delta time and call OnMinimapTick() afterwards</td>
+            <td width="20%" class="prop_type_style">FTBM_GridTransform</td>
+            <td width="20%" class="prop_display_name_style">GridTransform</td>
+            <td width="60%">Current grid's transform info (position, rotation, zoom, tilt)</td>
           </tr>
           <tr>
-            <td width="20%">FTimerHandle</td>
-            <td width="20%">MinimapTickTimerHandle</td>
+            <td width="20%" class="prop_type_style">FTBM_RegisteredGrid</td>
+            <td width="20%" class="prop_display_name_style">ActiveGrid</td>
+            <td width="60%">Currently active minimap grid</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TSet</td>
+            <td width="20%" class="prop_display_name_style">LoadedTiles</td>
+            <td width="60%">Currently displayed grid tiles</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">TileLoaderTick</td>
+            <td width="60%">Update rate of the tile loader
+NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTimerHandle</td>
+            <td width="20%" class="prop_display_name_style">TileLoaderTimerHandle</td>
             <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">MinimapUISize</td>
-            <td width="60%">Minimap UISize:
-UI size of this minimap widget</td>
-          </tr>
-          <tr>
-            <td width="20%">FVector</td>
-            <td width="20%">MinimapWorldLocation</td>
-            <td width="60%">Minimap World Location:
-Actual world location of the minimap.
-NOTE: could be different to the origin location if map panning is implemented</td>
-          </tr>
-          <tr>
-            <td width="20%">FVector</td>
-            <td width="20%">OriginLocation</td>
-            <td width="60%">Origin Location:
-The source world location of the minimap eg. the player location</td>
-          </tr>
-          <tr>
-            <td width="20%">FTBM_MinimapPerWidgetInfo</td>
-            <td width="20%">PerWidgetInfo</td>
-            <td width="60%">Per Widget Info:
-Cached info specified per widget parent class</td>
-          </tr>
-          <tr>
-            <td width="20%">URetainerBox*</td>
-            <td width="20%">RetainerBox</td>
-            <td width="60%">Retainer Box:
-Used for minimap mask (circle, rectangle)</td>
-          </tr>
-          <tr>
-            <td width="20%">UMaterialInstanceDynamic*</td>
-            <td width="20%">ShapeMaskDynamicMaterial</td>
-            <td width="60%">Shape Mask Dynamic Material:
-Current minimap mask material</td>
-          </tr>
-          <tr>
-            <td width="20%">UTBM_TileGridWidget*</td>
-            <td width="20%">TileGridWidget</td>
-            <td width="60%">Tile Grid Widget:
-The container of the grid</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">TileLoaderTick</td>
-            <td width="60%">Tile Loader Tick:
-Update rate of the tile loader
-NOTE: to update the loader every game tick set this variable to current delta time and call OnTileLoaderTick() afterwards</td>
-          </tr>
-          <tr>
-            <td width="20%">FTimerHandle</td>
-            <td width="20%">TileLoaderTimerHandle</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">WorldDimensions</td>
-            <td width="60%">World Dimensions:
-World dimensions (Row&amp;Column * TileWorldSize)</td>
           </tr>
         </tbody>
       </table>
       <h2 class="title_style">Nodes</h2>
       <table>
         <tbody>
+          <tr>
+            <td>
+              <a href="./nodes/AdjustGridOrigin.html">Adjust Grid Origin</a>
+            </td>
+          </tr>
           <tr>
             <td>
               <a href="./nodes/CacheMinimapSize.html">Cache Minimap Size</a>
@@ -203,7 +160,22 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           </tr>
           <tr>
             <td>
+              <a href="./nodes/UpdateTickRates.html">Event Update Tick Rates</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/FindBlipContextIndexFromName.html">Find Blip Context Index from Name</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/GetActiveGrid.html">Get Active Grid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetActiveGridYaw.html">Get Active Grid Yaw</a>
             </td>
           </tr>
           <tr>
@@ -214,6 +186,11 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           <tr>
             <td>
               <a href="./nodes/GetBlipPosition.html">Get Blip Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetDefaultGridAngle.html">Get Default Grid Angle</a>
             </td>
           </tr>
           <tr>
@@ -248,6 +225,16 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           </tr>
           <tr>
             <td>
+              <a href="./nodes/GetLoadedTiles.html">Get Loaded Tiles</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetMinimapCenterPosition.html">Get Minimap Center Position</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/GetMinimapUISize.html">Get Minimap UISize</a>
             </td>
           </tr>
@@ -259,6 +246,11 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           <tr>
             <td>
               <a href="./nodes/GetMouseToWorldLocation.html">Get Mouse to World Location</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetTileGridWidget.html">Get Tile Grid Widget</a>
             </td>
           </tr>
           <tr>
@@ -279,11 +271,6 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           <tr>
             <td>
               <a href="./nodes/GetWorldLocationRatio.html">Get World Location Ratio</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="./nodes/GetWorldToUICoords.html">Get World to UICoords</a>
             </td>
           </tr>
           <tr>
@@ -339,6 +326,11 @@ World dimensions (Row&amp;Column * TileWorldSize)</td>
           <tr>
             <td>
               <a href="./nodes/UpdateGridTransform.html">Update Grid Transform</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UpdateTickRates.html">Update Tick Rates</a>
             </td>
           </tr>
         </tbody>

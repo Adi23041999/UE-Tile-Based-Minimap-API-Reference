@@ -16,7 +16,8 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Subsystem &gt; WorldSubsystem &gt; TickableWorldSubsystem &gt; TBM_Subsystem (Tile Based Minimap Subsystem)</i>
       </p>
-      <p>TBM Subsystem is the central managing point of the plugin
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">TBM Subsystem is the central managing point of the plugin
  - collects grid and blip data
  - manages blips (icons) which then map widgets use as source for adding blip widgets
  - keeps track of blip queries per player (used to filter displayed blips)
@@ -27,62 +28,53 @@
       <table>
         <tbody>
           <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">BlipInfo</td>
-            <td width="60%">Blip Info:
-Collected blip setup info</td>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">MinimapInfo</td>
+            <td width="60%">Collected minimap (grid) info</td>
           </tr>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">BlipTransformInterpSpeed</td>
-            <td width="60%">Blip Transform Interp Speed:
-Blip transform interpolation speed. If &lt;= 0 plugin's settings default value is used</td>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">BlipInfo</td>
+            <td width="60%">Collected blip setup info</td>
           </tr>
           <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">ClientBlipsTransforms</td>
-            <td width="60%">Client Blips Transforms:
-Replicated blip locations and UI rotations</td>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">EffectsInfo</td>
+            <td width="60%">Collected blip effects info</td>
           </tr>
           <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">EffectsInfo</td>
-            <td width="60%">Effects Info:
-Collected blip effects info</td>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">ClientBlipsTransforms</td>
+            <td width="60%">Clien side replicated blip locations and UI rotations</td>
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">GPSGoals</td>
-            <td width="60%">GPSGoals:
-GPS Goals (Blips that the GPS widget should consider when calculating the route).
-If multiple goals are present then the closest one is picked by the system.
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">BlipTransformInterpSpeed</td>
+            <td width="60%">Blip transform interpolation speed. If &lt;= 0 plugin's settings default value is used</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">GPSGoals</td>
+            <td width="60%">GPS Goals (Blips that the GPS widget should consider when calculating the route).
+If multiple goals are present the closest one is picked by the system.
 Additionally bGoalOverride can be set to true to pick only that single goal (eg. if the player added a waypoint on their map).
 Only one Goal Override should be present at the time.
-A goal is automatically cleared once the blip is removedw</td>
+A goal is automatically cleared once the blip is removed</td>
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">GPSStaticPaths</td>
-            <td width="60%">GPSStatic Paths:
-Static paths to be drawn along the goals</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">GPSStaticPaths</td>
+            <td width="60%">Static paths (predefined routes) to be drawn along the goals</td>
           </tr>
           <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">MinimapInfo</td>
-            <td width="60%">Minimap Info:
-Collected minimap(grid) info</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">RegisteredGrids</td>
+            <td width="60%">Currently registered grids (grids that map widgets can display)</td>
           </tr>
           <tr>
-            <td width="20%">TSet</td>
-            <td width="20%">RegisteredGrids</td>
-            <td width="60%">Registered Grids:
-Currently registered grids (grids that map widgets can switch to)</td>
-          </tr>
-          <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">ShownZones</td>
-            <td width="60%">Shown Zones:
-List of zones that should be displayed on map widgets.
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">ShownZones</td>
+            <td width="60%">List of zones that should be displayed on map widgets.
 Key is the zone indentifier tag.
 Value is a list of colors. Usually there is only one color tag present but there could be a situation where multiple
 color tags are in the container. In that case the objects that listen for the zones need to implement a priority system</td>
@@ -254,17 +246,27 @@ color tags are in the container. In that case the objects that listen for the zo
           </tr>
           <tr>
             <td>
-              <a href="./nodes/IsGridRegisteredByTag.html">Is Grid Registered by Tag</a>
+              <a href="./nodes/IsPointInsideRegisteredGrid.html">Is Point Inside Registered Grid</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsPointInsideRegisteredGridTrigger.html">Is Point Inside Registered Grid Trigger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/MakeGridTriggerFromShapeComponent.html">Make Grid Trigger from Shape Component</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/K2_MakeGridTriggersFromShapeComponents.html">Make Grid Triggers From Shape Components</a>
             </td>
           </tr>
           <tr>
             <td>
               <a href="./nodes/RegisterGrid.html">Register Grid</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="./nodes/RegisterGridByTag.html">Register Grid by Tag</a>
             </td>
           </tr>
           <tr>
@@ -300,11 +302,6 @@ color tags are in the container. In that case the objects that listen for the zo
           <tr>
             <td>
               <a href="./nodes/UnregisterGrid.html">Unregister Grid</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="./nodes/UnregisterGridByTag.html">Unregister Grid by Tag</a>
             </td>
           </tr>
           <tr>

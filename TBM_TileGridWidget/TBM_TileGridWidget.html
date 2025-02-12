@@ -16,90 +16,72 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_TileGridWidget</i>
       </p>
-      <p>Base class responsible for loading and displaying the minimap tiles in a grid</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Base class responsible for loading and displaying the minimap tiles in a grid</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">AffectsBlipTransform</td>
-            <td width="60%">Affects Blip Transform:
-Whether the blips are also affected due to transfrom updates of this widget (ie. blip widgets are attached to this widget)
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UScaleBox&gt;</td>
+            <td width="20%" class="prop_display_name_style">GridScaleBox</td>
+            <td width="60%">Required to keep the gird's proper ratio (set Strech to None)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;USizeBox&gt;</td>
+            <td width="20%" class="prop_display_name_style">GridSizeBox</td>
+            <td width="60%">Required for setting the widget size</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UOverlay&gt;</td>
+            <td width="20%" class="prop_display_name_style">ParentOverlay</td>
+            <td width="60%">Main container widget</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UImage&gt;</td>
+            <td width="20%" class="prop_display_name_style">LQImage</td>
+            <td width="60%">The widget that holds the low quality single image of the grid</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UCanvasPanel&gt;</td>
+            <td width="20%" class="prop_display_name_style">AreaBlipCanvas</td>
+            <td width="60%">Container for the area blips</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UTBM_GPSWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">GPSWidget</td>
+            <td width="60%">GPS widget</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">ESlateVisibility</td>
+            <td width="20%" class="prop_display_name_style">GridVisibility</td>
+            <td width="60%">Default grid visibility</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">ESlateVisibility</td>
+            <td width="20%" class="prop_display_name_style">HiddenVisibility</td>
+            <td width="60%">Visibility setting when the grid is hidden</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">AffectsBlipTransform</td>
+            <td width="60%">Whether the blips are also affected due to transfrom updates of this widget (ie. blip widgets are attached to this widget)
 If true the minimap skips some blip transform calculations
 Should be false on material based grids</td>
           </tr>
           <tr>
-            <td width="20%">UCanvasPanel*</td>
-            <td width="20%">AreaBlipCanvas</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">TileWidgets</td>
+            <td width="60%">Constructed tile widgets by tile ID</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">MinimapWidget</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">CurrentOffset</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">CurrentTilt</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">UTBM_GPSWidget*</td>
-            <td width="20%">GPSWidget</td>
-            <td width="60%">GPSWidget:
-GPS widget</td>
-          </tr>
-          <tr>
-            <td width="20%">UScaleBox*</td>
-            <td width="20%">GridScaleBox</td>
-            <td width="60%">Grid Scale Box:
-Required to keep the gird's proper ratio (set Strech to None)</td>
-          </tr>
-          <tr>
-            <td width="20%">USizeBox*</td>
-            <td width="20%">GridSizeBox</td>
-            <td width="60%">Grid Size Box:
-Required for setting the widget size</td>
-          </tr>
-          <tr>
-            <td width="20%">ESlateVisibility</td>
-            <td width="20%">GridVisibility</td>
-            <td width="60%">Grid Visibility:
-Default grid visibility</td>
-          </tr>
-          <tr>
-            <td width="20%">ESlateVisibility</td>
-            <td width="20%">HiddenVisibility</td>
-            <td width="60%">Hidden Visibility:
-Visibility setting when the grid is hidden</td>
-          </tr>
-          <tr>
-            <td width="20%">UImage*</td>
-            <td width="20%">LQImage</td>
-            <td width="60%">LQImage:
-The widget that holds the low quality single image of the grid</td>
-          </tr>
-          <tr>
-            <td width="20%">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
-            <td width="20%">MinimapWidget</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">NextLoadImmediate</td>
-            <td width="60%">Next Load Immediate:
-If true tile textures will be loaded synchronously (can cause a hitch)</td>
-          </tr>
-          <tr>
-            <td width="20%">UOverlay*</td>
-            <td width="20%">ParentOverlay</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">TileWidgets</td>
-            <td width="60%">Tile Widgets:
-Constructed tile widgets by tile ID</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">NextLoadImmediate</td>
+            <td width="60%">If true tile textures will be loaded synchronously (can cause a hitch)</td>
           </tr>
         </tbody>
       </table>

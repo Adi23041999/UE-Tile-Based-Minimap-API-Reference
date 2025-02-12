@@ -16,150 +16,150 @@
         <b>Hierarchy: </b>
         <i>Object &gt; ActorComponent &gt; TBM_PlayerBlipComponent</i>
       </p>
-      <p>Manages player related blips, should be added to PlayerState for proper replication</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Manages player related blips, should be added to PlayerState for proper replication</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">AdjustPositionAfterTeleport</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataBasic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataBasicPlayer</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataBasic</td>
-            <td width="20%">BlipDataBasicMarker</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataDynamic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataDynamicPlayer</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataBasic</td>
-            <td width="20%">BlipDataBasicNorth</td>
+            <td width="20%" class="prop_type_style">ETBM_PlayerBlipReplicationMethod</td>
+            <td width="20%" class="prop_display_name_style">PrefferredBlipReplicationMethod</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataBasic</td>
-            <td width="20%">BlipDataBasicPlayer</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">UseAlternativeRepMethodifPrefferedFails</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataBasic</td>
-            <td width="20%">BlipDataBasicSearchRadius</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">BlipTagNorth</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataBasic</td>
-            <td width="20%">BlipDataBasicWaypoint</td>
+            <td width="20%" class="prop_type_style">ETBM_MinimapRotationDirection</td>
+            <td width="20%" class="prop_display_name_style">NorthDirection</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataDynamic</td>
-            <td width="20%">BlipDataDynamicPlayer</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataBasic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataBasicNorth</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipDataDynamic</td>
-            <td width="20%">BlipDataDynamicSearchRadius</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">BlipTagMarkerBase</td>
+            <td width="60%">Used as the base of the marker blip name so final blip name is BlipTagMarkerBase_XX where XX is the marker ID</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">MaxNumberedMarkerID</td>
+            <td width="60%">Max amount of numbered markers the player can add</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataBasic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataBasicMarker</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipQuery</td>
-            <td width="20%">BlipQuery</td>
-            <td width="60%">Blip Query:
-Blip query setup. Allows the player to display different sets of blip on the menu map widget using the BlipQuery widget</td>
-          </tr>
-          <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">BlipTagMarkerBase</td>
-            <td width="60%">Blip Tag Marker Base:
-Used as the base of the marker blip name so final blip name is BlipTagMarkerBase_XX where XX is the marker ID</td>
-          </tr>
-          <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">BlipTagNorth</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">BlipTagWaypoint</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">BlipTagSearchRadius</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">WaypointRadius</td>
+            <td width="60%">Waypoint removal range; if the player is within it the waypoint is automatically removed</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataBasic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataBasicWaypoint</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">BlipTagToggleEffect</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">BlipTagSearchRadius</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">BlipTagWaypoint</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataBasic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataBasicSearchRadius</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FLinearColor</td>
-            <td width="20%">CachedCustomColor</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipDataDynamic</td>
+            <td width="20%" class="prop_display_name_style">BlipDataDynamicSearchRadius</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">CanToggleBlipEffects</td>
-            <td width="60%">Can Toggle Blip Effects:
-Whether the player can toggle blip effects. eg make blips sticky by clicking on them</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">CanToggleBlipEffects</td>
+            <td width="60%">Whether the player can toggle blip effects. eg make blips sticky by clicking on them</td>
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;APawn&gt;</td>
-            <td width="20%">ControlledPawn</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">BlipTagToggleEffect</td>
+            <td width="60%">The blip effect to switch the clicked blips to</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FGameplayTagContainer</td>
+            <td width="20%" class="prop_display_name_style">ToggleableEffects</td>
+            <td width="60%">The list of effects that the player can toggle</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTBM_BlipQuery</td>
+            <td width="20%" class="prop_display_name_style">BlipQuery</td>
+            <td width="60%">Blip query setup. Allows the player to display different sets of blip on the menu map widget using the BlipQuery widget</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;APawn&gt;</td>
+            <td width="20%" class="prop_display_name_style">ControlledPawn</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">HasWaypoint</td>
+            <td width="20%" class="prop_type_style">FName</td>
+            <td width="20%" class="prop_display_name_style">PlayerBlipID</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">int32</td>
-            <td width="20%">MaxNumberedMarkerID</td>
-            <td width="60%">Max Numbered Marker ID:
-Max amount of numbered markers the player can add</td>
-          </tr>
-          <tr>
-            <td width="20%">ETBM_MinimapRotationDirection</td>
-            <td width="20%">NorthDirection</td>
+            <td width="20%" class="prop_type_style">FName</td>
+            <td width="20%" class="prop_display_name_style">OldPlayerBlipID</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">NumberedMarkerIDs</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">NumberedMarkerIDs</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FName</td>
-            <td width="20%">OldPlayerBlipID</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">HasWaypoint</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FName</td>
-            <td width="20%">PlayerBlipID</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">AdjustPositionAfterTeleport</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">ETBM_PlayerBlipReplicationMethod</td>
-            <td width="20%">PrefferredBlipReplicationMethod</td>
+            <td width="20%" class="prop_type_style">TMap</td>
+            <td width="20%" class="prop_display_name_style">ToggledBlips</td>
+            <td width="60%">Keeps track of the blips that had their effects toggled. Tag is the original effect before change</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FLinearColor</td>
+            <td width="20%" class="prop_display_name_style">CachedCustomColor</td>
             <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">TMap</td>
-            <td width="20%">ToggledBlips</td>
-            <td width="60%">Toggled Blips:
-Keeps track of the blips that had their effects toggled. Tag is the original non effect before change</td>
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">UseAlternativeRepMethodifPrefferedFails</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">WaypointRadius</td>
-            <td width="60%">Waypoint Radius:
-Waypoint removal range; if the player is within it the waypoint is automatically removed</td>
           </tr>
         </tbody>
       </table>

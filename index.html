@@ -57,8 +57,7 @@
               <a href="./TBM_BlipTargetWidget/TBM_BlipTargetWidget.html">TBM_BlipTargetWidget</a>
               <div class="group_type">TBM</div>
             </td>
-            <td width="70%">Blip that indicates a target.
-Changes shape depening on whether the target is below, level or above the player</td>
+            <td width="70%" />
           </tr>
           <tr>
             <td width="5%">
@@ -98,7 +97,7 @@ Changes shape depening on whether the target is below, level or above the player
               <a href="./TBM_DeveloperSettings/TBM_DeveloperSettings.html">TBM_DeveloperSettings (Tile Based Minimap)</a>
               <div class="group_type">TBM</div>
             </td>
-            <td width="70%">TBM Plugin settings</td>
+            <td width="70%">Configure the Tile Based Minimap plugin</td>
           </tr>
           <tr>
             <td width="5%">
@@ -227,7 +226,8 @@ Transform (location, rotation and scale) is sourced from the component or it's o
               <a href="./TBM_TileGridMaterialWidget/TBM_TileGridMaterialWidget.html">TBM_TileGridMaterialWidget</a>
               <div class="group_type">TBM</div>
             </td>
-            <td width="70%">Uses simple UImage widgets to display the grid. Transform is calculated through it's materials</td>
+            <td width="70%">Uses simple UImage widgets to display the grid. Transform is calculated through it's materials.
+Player cannot interact with blips.</td>
           </tr>
           <tr>
             <td width="5%">
@@ -278,24 +278,24 @@ Should be used for grids that can be interacted with (like menu map widgets)</td
       <table>
         <tbody>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Client Transform</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipClientTransform</div>
             </td>
             <td width="25%">
               <div>Client side information about replicated blip transform</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FVector</td>
-                    <td width="20%">ClientLocation</td>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">ClientLocation</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">ClientRotation</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">ClientRotation</td>
                     <td width="60%" />
                   </tr>
                 </tbody>
@@ -303,122 +303,111 @@ Should be used for grids that can be interacted with (like menu map widgets)</td
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Data Basic</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipDataBasic</div>
             </td>
             <td width="25%">
               <div>Holds the core blip data. Can be used for static blips</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">uint8</td>
-                    <td width="20%">AdditionalZOrder</td>
-                    <td width="60%">Additional ZOrder:
-Added on top of the z order from blip setup data table</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">BlipSetup</td>
+                    <td width="60%">Blip setup ID (tag); corresponds to subsystem's collected data</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">BlipSetup</td>
-                    <td width="60%">Blip Setup:
-Blip setup ID (tag); corresponds to subsystem's collected data</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">EffectsSetup</td>
+                    <td width="60%">Blip effects ID (tag); corresponds to subsystem's collected data</td>
                   </tr>
                   <tr>
-                    <td width="20%">FLinearColor</td>
-                    <td width="20%">ColorOverride</td>
-                    <td width="60%">Color Override:
-Optional color override. Ignored if alpha is set to zero</td>
+                    <td width="20%" class="prop_type_style">FGameplayTagContainer</td>
+                    <td width="20%" class="prop_display_name_style">InstanceTags</td>
+                    <td width="60%">Tags assigned to this specific blip instance</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">EffectsSetup</td>
-                    <td width="60%">Effects Setup:
-Blip effects ID (tag); corresponds to subsystem's collected data</td>
+                    <td width="20%" class="prop_type_style">FLinearColor</td>
+                    <td width="20%" class="prop_display_name_style">ColorOverride</td>
+                    <td width="60%">Optional color override. Ignored if alpha is set to zero</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector</td>
-                    <td width="20%">InitialLocation</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">InitialLocation</td>
+                    <td width="60%">The world location of the blip</td>
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">InitialRotation</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">InitialRotation</td>
+                    <td width="60%">The blip yaw rotation</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">InitialScale</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SourceRotation</td>
+                    <td width="60%">Whether to rotate the blip in the direction of the location source (minimap rotation or source component in case of dynamic blips)</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTagContainer</td>
-                    <td width="20%">InstanceTags</td>
-                    <td width="60%">Instance Tags:
-Tags assigned to this specific blip instance</td>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">InitialScale</td>
+                    <td width="60%">Scale multiplier for this blip instance</td>
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">OverrideClientData</td>
-                    <td width="60%">Override Client Data:
-If true replicated server blip data overrides current client blip data when the blip replicates. This affects basic data so client side dynamic data is intact</td>
+                    <td width="20%" class="prop_type_style">uint8</td>
+                    <td width="20%" class="prop_display_name_style">AdditionalZOrder</td>
+                    <td width="60%">Added on top of the z order from the blip setup</td>
                   </tr>
                   <tr>
-                    <td width="20%">ETBM_BlipReplicationType</td>
-                    <td width="20%">ReplicationType</td>
-                    <td width="60%">Replication Type:
-Whether to use the replicator component to replicate the blip
+                    <td width="20%" class="prop_type_style">ETBM_BlipReplicationType</td>
+                    <td width="20%" class="prop_display_name_style">ReplicationType</td>
+                    <td width="60%">Whether to use the replicator component to replicate the blip
 Blips still can be replicated if the owner is replicated so this setting should be disabled for most of the blips if possible</td>
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">SourceRotation</td>
-                    <td width="60%">Source Rotation:
-Whether to rotate the blip in the direction of the location source (minimap rotation or source component in case of dynamic blips)</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">OverrideClientData</td>
+                    <td width="60%">If true replicated server blip data overrides current client blip data when the blip replicates. This affects basic data so client side dynamic data is intact</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Data Dynamic</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipDataDynamic</div>
             </td>
             <td width="25%">
               <div>Dynamic blip. Location and rotation is optionally sourced from the specified object</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UObject&gt;</td>
-                    <td width="20%">LifetimeContext</td>
-                    <td width="60%">Lifetime Context:
-Pointer to the object that manages the blip lifetime, eg. blip will be destroyed if this is null and lifetime handling is set to remove</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">ETBM_BlipSourceDestroyHandling</td>
-                    <td width="20%">LifetimeHandling</td>
-                    <td width="60%">Lifetime Handling:
-What should happen when the lifetime context is invalid?
-NOTES: Users need to manually remove the blip if the blip isn't set to remove itself after the object is destroyed</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UObject&gt;</td>
-                    <td width="20%">TransformContext</td>
-                    <td width="60%">Transform Context:
-Pointer to the object that is used as source location and rotation of the blip.
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">TransformContext</td>
+                    <td width="60%">Pointer to the object that is used as source location and rotation of the blip.
 By default this can be set to an actor or a scene component only unless the object implements blip transform interface</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UObject&gt;</td>
+                    <td width="20%" class="prop_display_name_style">LifetimeContext</td>
+                    <td width="60%">Pointer to the object that manages the blip lifetime, eg. blip will be destroyed if this is null and lifetime handling is set to remove</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">ETBM_BlipSourceDestroyHandling</td>
+                    <td width="20%" class="prop_display_name_style">LifetimeHandling</td>
+                    <td width="60%">What should happen when the lifetime context is invalid?
+NOTES: Users need to manually remove the blip if the blip isn't set to remove itself after the object is destroyed</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Query</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipQuery</div>
             </td>
             <td width="25%">
               <div>Used to query blips that should be displayed on the minimap.
@@ -429,468 +418,521 @@ InstanceTag query is based on an actual blip instance (FTBM_BlipBasic-&gt;BlipDa
 The SetupTag query is applied first then the InstanceTag query is applied afterwards.
 Calling Update functions with empty tags will reset the tags to the specified default ones</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">BlipInstanceTagQueries</td>
-                    <td width="60%">Blip Instance Tag Queries:
-Instance tag query list</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">DefaultSetupQuery</td>
+                    <td width="60%">Default setup query to apply when no other query is applied</td>
                   </tr>
                   <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">BlipSetupTagQueries</td>
-                    <td width="60%">Blip Setup Tag Queries:
-Setup tag query list</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">DefaultInstanceQuery</td>
+                    <td width="60%">Default instance query to apply when no other query is applied</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">CurrentInstanceQuery</td>
-                    <td width="60%">Current Instance Query:
-Currently applied instance query</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">CurrentSetupQuery</td>
+                    <td width="60%">Currently applied setup query</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">CurrentSetupQuery</td>
-                    <td width="60%">Current Setup Query:
-Currently applied setup query</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">CurrentInstanceQuery</td>
+                    <td width="60%">Currently applied instance query</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">DefaultInstanceQuery</td>
-                    <td width="60%">Default Instance Query:
-Default instance query to apply when no other query is applied</td>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">BlipSetupTagQueries</td>
+                    <td width="60%">Setup tag query list</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">DefaultSetupQuery</td>
-                    <td width="60%">Default Setup Query:
-Default setup query to apply when no other query is applied</td>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">BlipInstanceTagQueries</td>
+                    <td width="60%">Instance tag query list</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Setup Info</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipSetupInfo</div>
             </td>
             <td width="25%">
-              <div>TBM Blip Setup Info</div>
+              <div>Holds information required to display a blip (icon) on map widgets</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FGameplayTagContainer</td>
-                    <td width="20%">BlacklistedGridTags</td>
-                    <td width="60%">Blacklisted Grid Tags:
-The blip won't be displayed if the currently active grid is in this list</td>
+                    <td width="20%" class="prop_type_style">TSubclassOf&lt;UTBM_BlipWidget&gt; </td>
+                    <td width="20%" class="prop_display_name_style">WidgetClass</td>
+                    <td width="60%">Default widget of the blip</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">BlacklistedGrids</td>
-                    <td width="60%">Blacklisted Grids:
-Additional FName list if not using tags</td>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
+                    <td width="20%" class="prop_display_name_style">Material</td>
+                    <td width="60%">Blip widget material; if invalid "Texture" will be used instead</td>
                   </tr>
                   <tr>
-                    <td width="20%">ETBM_BlipType</td>
-                    <td width="20%">BlipType</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FLinearColor</td>
-                    <td width="20%">Color</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FDataTableRowHandle</td>
-                    <td width="20%">CustomData</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FText</td>
-                    <td width="20%">Description</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FTBM_GPSVisuals</td>
-                    <td width="20%">GPSPathVisuals</td>
-                    <td width="60%">GPSPath Visuals:
-GPS route visual settings if the blip is used as GPS target</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
-                    <td width="20%">Material</td>
-                    <td width="60%">Material:
-Blip widget material; if invalid "Texture" will be used instead</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">MaxInterpSquaredDistance</td>
-                    <td width="60%">Max Interp Squared Distance:
-Max distance difference between current and replicated locations before the location is snapped</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">NetInterpLocation</td>
-                    <td width="60%">Net Interp Location:
-Whether to smoothly interpolate replicated blip location</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">NetInterpRotation</td>
-                    <td width="60%">Net Interp Rotation:
-Whether to smoothly interpolate replicated blip rotation</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">Pivot</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">Scale</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FGameplayTagContainer</td>
-                    <td width="20%">Tags</td>
-                    <td width="60%">Tags:
-Tags specific to this blip setup</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UTexture2D&gt;</td>
-                    <td width="20%">Texture</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
-                    <td width="20%">TransformMaterial</td>
-                    <td width="60%">Transform Material:
-Used when the minimap widget has bUseMaterialTransform set to true.
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
+                    <td width="20%" class="prop_display_name_style">TransformMaterial</td>
+                    <td width="60%">Used when the minimap widget has bUseMaterialTransform set to true.
 In such case a simple UImage widget will be created and the transformations will be done in the material itself.
 This removes the pixel jittering effect and the blip transform data has to be sent to the material itself</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSubclassOf&lt;UTBM_BlipWidget&gt; </td>
-                    <td width="20%">WidgetClass</td>
-                    <td width="60%">Widget Class:
-Default widget of the blip</td>
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UTexture2D&gt;</td>
+                    <td width="20%" class="prop_display_name_style">Texture</td>
+                    <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">ZOrder</td>
-                    <td width="60%">ZOrder:
-Display order</td>
+                    <td width="20%" class="prop_type_style">ETBM_BlipType</td>
+                    <td width="20%" class="prop_display_name_style">BlipType</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FLinearColor</td>
+                    <td width="20%" class="prop_display_name_style">Color</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">Scale</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">Pivot</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">ZOrder</td>
+                    <td width="60%">Display order</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTBM_GPSVisuals</td>
+                    <td width="20%" class="prop_display_name_style">GPSPathVisuals</td>
+                    <td width="60%">GPS route visual settings if the blip is used as GPS target</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FText</td>
+                    <td width="20%" class="prop_display_name_style">Description</td>
+                    <td width="60%">Text that appears on the blip's tooltip</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FGameplayTagContainer</td>
+                    <td width="20%" class="prop_display_name_style">Tags</td>
+                    <td width="60%">Tags specific to this blip setup</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FGameplayTagContainer</td>
+                    <td width="20%" class="prop_display_name_style">BlacklistedGridTags</td>
+                    <td width="60%">The blip won't be displayed if the currently active grid is in this list</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">BlacklistedGrids</td>
+                    <td width="60%">Additional FName list if not using tags</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">NetInterpLocation</td>
+                    <td width="60%">Whether to smoothly interpolate replicated blip location</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">MaxInterpSquaredDistance</td>
+                    <td width="60%">Max distance difference between current and replicated locations before the location is snapped</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">NetInterpRotation</td>
+                    <td width="60%">Whether to smoothly interpolate replicated blip rotation</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+                    <td width="20%" class="prop_display_name_style">CustomData</td>
+                    <td width="60%" />
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Blip Widget Context</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_BlipWidgetContext</div>
             </td>
             <td width="25%">
               <div>Holds data about an actual blip image inside a minimap widget</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">BaseScale</td>
-                    <td width="60%">Base Scale:
-Base scale before applying scale effects</td>
+                    <td width="20%" class="prop_type_style">FName</td>
+                    <td width="20%" class="prop_display_name_style">BlipName</td>
+                    <td width="60%">Blip ID</td>
                   </tr>
                   <tr>
-                    <td width="20%">FName</td>
-                    <td width="20%">BlipName</td>
-                    <td width="60%">Blip Name:
-Blip ID</td>
+                    <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UWidget&gt;</td>
+                    <td width="20%" class="prop_display_name_style">BlipWidget</td>
+                    <td width="60%">Pointer to a spawned blip widget</td>
                   </tr>
                   <tr>
-                    <td width="20%">TWeakObjectPtr&lt;UWidget&gt;</td>
-                    <td width="20%">BlipWidget</td>
-                    <td width="60%">Blip Widget:
-Pointer to a spawned blip widget</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">IsMaterialBased</td>
+                    <td width="60%">Wheter the blip uses the blip material for the transformations</td>
                   </tr>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">DesiredAngle</td>
-                    <td width="60%">Desired Angle:
-Blip rotation on the UI</td>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">WorldLocation</td>
+                    <td width="60%">Origin location of the blip</td>
                   </tr>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">DesiredOpacity</td>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">DesiredPosition</td>
+                    <td width="60%">Blip position on the UI</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">DesiredAngle</td>
+                    <td width="60%">Blip rotation on the UI</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">NetInterpAngle</td>
+                    <td width="60%">Base angle for interpolation</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">BaseScale</td>
+                    <td width="60%">Base scale before applying scale effects</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">DesiredScale</td>
+                    <td width="60%">Actual scale of the blip on the UI</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">DesiredOpacity</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">DesiredPosition</td>
-                    <td width="60%">Desired Position:
-Blip position on the UI</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">Sticky</td>
+                    <td width="60%">Whether the blip should be sticked to the border</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">DesiredScale</td>
-                    <td width="60%">Desired Scale:
-Actual scale of the blip on the UI</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">IsMaterialBased</td>
-                    <td width="60%">Is Material Based:
-Wheter the blip uses the blip material for the transformations</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">LoadingData</td>
-                    <td width="60%">Loading Data:
-Whether the blip material/texture is currently async loading</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">NetInterpAngle</td>
-                    <td width="60%">Net Interp Angle:
-Base angle for interpolation</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">Sticky</td>
-                    <td width="60%">Sticky:
-Whether the blip should be sticked to the border</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector</td>
-                    <td width="20%">WorldLocation</td>
-                    <td width="60%">World Location:
-Origin location of the blip</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">LoadingData</td>
+                    <td width="60%">Whether the blip material/texture is currently async loading</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Effects Info</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_EffectsInfo</div>
             </td>
             <td width="25%">
-              <div>TBM Effects Info</div>
+              <div>Blip effects allow the blip to be smoothly fade depending on the distance to the border of the minimap</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FDataTableRowHandle</td>
-                    <td width="20%">CustomData</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">HeightSwitch</td>
-                    <td width="60%">Height Switch:
-Change appearance depending on the height distance of the player and the blip. Set to &lt;= 0.0f to disable</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector4</td>
-                    <td width="20%">OpacitybyDistance</td>
-                    <td width="60%">Opacity by Distance:
-Opacity based on distance ratio to the minimap border.
+                    <td width="20%" class="prop_type_style">FVector4</td>
+                    <td width="20%" class="prop_display_name_style">OpacitybyDistance</td>
+                    <td width="60%">Opacity based on distance ratio to the minimap border.
 XY: the range of the effect; X - minimap center, Y - minimap border.
 ZW: the opacity itself.
 Set X and Y to 0.0f to disable the effect.
 NOTE: if the effect isn't disabled and W is bigger than 0.0f the blip will be sticked to the minimap border.</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector4</td>
-                    <td width="20%">ScalebyDistance</td>
-                    <td width="60%">Scale by Distance:
-Scale based on distance ratio to the minimap border.
+                    <td width="20%" class="prop_type_style">FVector4</td>
+                    <td width="20%" class="prop_display_name_style">ScalebyDistance</td>
+                    <td width="60%">Scale based on distance ratio to the minimap border.
 XY: the range of the effect; X - minimap center, Y - minimap border.
 ZW: the scale itself.
 Set X and Y to 0.0f to disable the effect.
 NOTE: if the effect isn't disabled and W is bigger than 0.0f the blip will be sticked to the minimap border.</td>
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">SticktoGrid</td>
-                    <td width="60%">Stick to Grid:
-Whether the blip should be scaled along with the grid zoom so it looks like it's glued to it</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">HeightSwitch</td>
+                    <td width="60%">Change appearance depending on the height distance of the player and the blip. Set to &lt;= 0.0f to disable</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SticktoGrid</td>
+                    <td width="60%">Whether the blip should be scaled along with the grid zoom so it looks like it's glued to it</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+                    <td width="20%" class="prop_display_name_style">CustomData</td>
+                    <td width="60%" />
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM GPSGoal</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_GPSGoal</div>
             </td>
             <td width="25%">
               <div>GPS Goal points to the blip we want to draw GPS route to</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FName</td>
-                    <td width="20%">BlipName</td>
-                    <td width="60%">Blip Name:
-The target blip</td>
+                    <td width="20%" class="prop_type_style">FUniqueNetIdRepl</td>
+                    <td width="20%" class="prop_display_name_style">PlayerID</td>
+                    <td width="60%">The player we want to draw the GPS route for</td>
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">GoalOverride</td>
-                    <td width="60%">Goal Override:
-Whether to override all of the player's active goals with this one</td>
+                    <td width="20%" class="prop_type_style">FName</td>
+                    <td width="20%" class="prop_display_name_style">BlipName</td>
+                    <td width="60%">The target blip</td>
                   </tr>
                   <tr>
-                    <td width="20%">FUniqueNetIdRepl</td>
-                    <td width="20%">PlayerID</td>
-                    <td width="60%">Player ID:
-The player we want to draw the GPS route for</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">GoalOverride</td>
+                    <td width="60%">Whether to override all of the player's active goals with this one</td>
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">Replicated</td>
-                    <td width="60%">Replicated:
-Whether the goal is replicated</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">Replicated</td>
+                    <td width="60%">Whether the goal is replicated</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM GPSStatic Path</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_GPSStaticPath</div>
             </td>
             <td width="25%">
-              <div>Similar to goal but only draws a static predefined route</div>
+              <div>Similar to goals but only draws a static predefined route</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">TWeakObjectPtr&lt;APlayerController&gt;</td>
-                    <td width="20%">OwningPlayer</td>
+                    <td width="20%" class="prop_type_style">FName</td>
+                    <td width="20%" class="prop_display_name_style">PathName</td>
+                    <td width="60%">Unique name of this path</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;APlayerController&gt;</td>
+                    <td width="20%" class="prop_display_name_style">OwningPlayer</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">TArray</td>
-                    <td width="20%">Path</td>
-                    <td width="60%">Path:
-World 2D locations</td>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">Path</td>
+                    <td width="60%">World 2D locations</td>
                   </tr>
                   <tr>
-                    <td width="20%">FName</td>
-                    <td width="20%">PathName</td>
-                    <td width="60%">Path Name:
-Unique name of this path</td>
+                    <td width="20%" class="prop_type_style">FTBM_GPSVisuals</td>
+                    <td width="20%" class="prop_display_name_style">Visuals</td>
+                    <td width="60%">The appearance of the path on the UI (color)</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM GPSVisuals</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_GPSVisuals</div>
             </td>
             <td width="25%">
-              <div>GPS</div>
+              <div>Holds information about the appearance of GPS routes</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">AntiAlias</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SourceColorfromBlip</td>
+                    <td width="60%">The path color is sourced from the blip itself</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FLinearColor</td>
+                    <td width="20%" class="prop_display_name_style">Tint</td>
+                    <td width="60%">This color is used in case the path color is not sourced from the blip</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">AntiAlias</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">SourceColorfromBlip</td>
-                    <td width="60%">Source Color from Blip:
-The path color is sourced from the blip itself</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">Thickness</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">Thickness</td>
                     <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FLinearColor</td>
-                    <td width="20%">Tint</td>
-                    <td width="60%">Tint:
-This color is used in case the path color is not sourced from the blip</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Grid Transform</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_GridTransform</div>
             </td>
             <td width="25%">
               <div>Runtime info about the grid widget in a minimap widget</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">Angle</td>
-                    <td width="60%">Angle:
-UI Rotation</td>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">GridWorldTransform</td>
+                    <td width="60%">World grid transform
+Position: grid world offset
+Rotation: grid world rotation
+Scale: grid world size (for X and Y it's tile count * tile world radius, Z is taken from the trigger box)</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">CenterOffset</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">CanUpdateUI</td>
+                    <td width="60%">Whether the minimap UI can be updated (is valid)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">GridUISize</td>
+                    <td width="60%">Grid UI size, ie. tile count * widget UI size</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">WorldOrigin</td>
+                    <td width="60%">Minimap world origin (eg. player position)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">AdjustedWorldOrigin</td>
+                    <td width="60%">Minimap world origin adjusted by offset and grid reuse</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">FinalWorldOrigin</td>
+                    <td width="60%">Final world origin. May be adjusted by the user (eg. by map panning effect)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">LocalOrigin</td>
+                    <td width="60%">WorldOrigin in local grid space</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">FinalLocalOrigin</td>
+                    <td width="60%">FinalWorldOrigin in local grid space</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">MinimapUISize</td>
+                    <td width="60%">UI size of the minimap widget</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">Position</td>
+                    <td width="60%">Grid UI position</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">Angle</td>
+                    <td width="60%">Grid UI Rotation</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">NorthYaw</td>
+                    <td width="60%">Grid UI North rotation</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">Zoom</td>
+                    <td width="60%">Grid UI scale (zoom)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">Tilt</td>
+                    <td width="60%">Grid UI tilt</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">CenterOffset</td>
+                    <td width="60%">Grid UI center offset</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MenuMapKeyBindings</div>
+            </td>
+            <td width="25%">
+              <div>Holds the menu map interaction key bindings</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">BlipInteraction</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">NorthYaw</td>
-                    <td width="60%">North Yaw:
-North rotation</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">OriginLocationRatio</td>
-                    <td width="60%">Origin Location Ratio:
-Minimap world location as grid ratio (-0.5, -0.5 - top left corner, 0.5, 0.5 - bottom right corner)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">Position</td>
-                    <td width="60%">Position:
-Current UI position</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">Tilt</td>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">BlipTeleport</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">Valid</td>
-                    <td width="60%">Valid:
-Is the transform valid?</td>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">QuitKeys</td>
+                    <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">Zoom</td>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">ZoomOutKeys</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">ZoominKeys</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">PanningKeys</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">FilterBlipsNext</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TSet</td>
+                    <td width="20%" class="prop_display_name_style">FilterBlipsPrevious</td>
                     <td width="60%" />
                   </tr>
                 </tbody>
@@ -898,24 +940,144 @@ Is the transform valid?</td>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Key Bindings</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MenuMapSettings</div>
             </td>
             <td width="25%">
-              <div>TBM Key Bindings</div>
+              <div>Holds the menu map widget settings</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">BlipInteraction</td>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">ZoomInterpSpeed</td>
+                    <td width="60%">How fast to interp to desired zoom</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">ZoomSpeedMultiplier</td>
+                    <td width="60%">Zooming speed</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">KeyZoomAmount</td>
+                    <td width="60%">How much to zoom if the zoom comes from a key (keyboard, pad)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">PanningOverscrollSpeed</td>
+                    <td width="60%">Overscroll interp speed for mouse panning</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">PanningLimitMultiplier</td>
+                    <td width="60%">Panning limits; set to (0.5, 0.5) to limit panning to grid borders</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">KeyPanningSpeed</td>
+                    <td width="60%">Panning speed from keys (keyboard, pad)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">KeyPanningSpeedIncreaseTime</td>
+                    <td width="60%">How much time it takes to use full panning speed</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">MarkerAddTime</td>
+                    <td width="60%">How much time it takes while holding waypoint add key to add a marker instead</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ForceGConQuit</td>
+                    <td width="60%">Whether to force garbage collection on widget destruct</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MinimapInfo</div>
+            </td>
+            <td width="25%">
+              <div>Holds data required to display a grid on a minimap widget</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTBM_TileGridInfo</td>
+                    <td width="20%" class="prop_display_name_style">TileGridInfo</td>
+                    <td width="60%">The grid dimensions</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">TexturesPath</td>
+                    <td width="60%">The path to the folder containing the tile textures</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FString</td>
+                    <td width="20%" class="prop_display_name_style">TextureName</td>
+                    <td width="60%">The filename of the textures without the tile number</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">IndexOffset</td>
+                    <td width="60%">Offset to tile ID in the texture name (so eg. first tile starts at index 01 instead of 00)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">LQImages</td>
+                    <td width="60%">LQ images of the grids (optional)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">BGColors</td>
+                    <td width="60%">Background colors</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">Priority</td>
+                    <td width="60%">Display priority. Eg. interiors should have higher priority than the main level</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">PerWidgetInfo</td>
+                    <td width="60%">Per widget class info</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MinimapPerWidgetInfo</div>
+            </td>
+            <td width="25%">
+              <div>Custom data for specific minimap widget classes</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">DefaultZoom</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">BlipTeleport</td>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">ZoomLimit</td>
+                    <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+                    <td width="20%" class="prop_display_name_style">CustomData</td>
                     <td width="60%" />
                   </tr>
                 </tbody>
@@ -923,536 +1085,357 @@ Is the transform valid?</td>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Menu Map Key Bindings</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MinimapSettings</div>
             </td>
             <td width="25%">
-              <div>TBM Menu Map Key Bindings</div>
+              <div>Holds information about a minimap widget</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">FilterBlipsNext</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TickRate</td>
+                    <td width="60%">Update rate of the minimap widget</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">ETBM_MinimapRotationMode</td>
+                    <td width="20%" class="prop_display_name_style">RotationMode</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">FilterBlipsPrevious</td>
+                    <td width="20%" class="prop_type_style">ETBM_MinimapShape</td>
+                    <td width="20%" class="prop_display_name_style">Shape</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">PanningKeys</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
+                    <td width="20%" class="prop_display_name_style">ShapeMaskMaterials</td>
+                    <td width="60%">Mask materials for each shape</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">QuitKeys</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">Opacity</td>
+                    <td width="60%">Grid opacity</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">ZoomOutKeys</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">CenterOffset</td>
+                    <td width="60%">Offset of the minimap origin if using rectangle shape. Circle is unsupported for now</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSet</td>
-                    <td width="20%">ZoominKeys</td>
-                    <td width="60%" />
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Menu Map Settings</div>
-            </td>
-            <td width="25%">
-              <div>TBM Menu Map Settings</div>
-            </td>
-            <td width="50%">
-              <div class="param_name title_style">Properties:</div>
-              <table>
-                <tbody>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">ForceGConQuit</td>
-                    <td width="60%">Force GCon Quit:
-Whether to force garbace collection widget destruct</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">KeyPanningSpeed</td>
-                    <td width="60%">Key Panning Speed:
-Panning speed from keys (keyboard, pad)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">KeyPanningSpeedIncreaseTime</td>
-                    <td width="60%">Key Panning Speed Increase Time:
-How much time it takes to use full panning speed</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">KeyZoomAmount</td>
-                    <td width="60%">Key Zoom Amount:
-How much to zoom if the zoom comes from a key (keyboard, pad)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">MarkerAddTime</td>
-                    <td width="60%">Marker Add Time:
-How much time it takes while holding waypoint add key to add a marker instead</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">PanningLimitMultiplier</td>
-                    <td width="60%">Panning Limit Multiplier:
-Panning limits; set to (0.5, 0.5) to limit panning to grid borders</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">PanningOverscrollSpeed</td>
-                    <td width="60%">Panning Overscroll Speed:
-Overscroll interp speed for mouse panning</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">ZoomInterpSpeed</td>
-                    <td width="60%">Zoom Interp Speed:
-How fast to interp to desired zoom</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">ZoomSpeedMultiplier</td>
-                    <td width="60%">Zoom Speed Multiplier:
-Zooming speed</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Minimap Info</div>
-            </td>
-            <td width="25%">
-              <div>TBM Minimap Info</div>
-            </td>
-            <td width="50%">
-              <div class="param_name title_style">Properties:</div>
-              <table>
-                <tbody>
-                  <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">BGColors</td>
-                    <td width="60%">BGColors:
-Background colors</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">IndexOffset</td>
-                    <td width="60%">Index Offset:
-Offset to tile ID in the texture name (so eg. first tile starts at index 01 instead of 00)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">LQImages</td>
-                    <td width="60%">LQImages:
-LQ images of the grids (optional)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">PerWidgetInfo</td>
-                    <td width="60%">Per Widget Info:
-Per widget class info</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">Priority</td>
-                    <td width="60%">Priority:
-Display priority. Eg. interiors should have higher priority than the main level</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">SphereRadius</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FString</td>
-                    <td width="20%">TextureName</td>
-                    <td width="60%">Texture Name:
-The filename of the textures without the tile number</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">TexturesPath</td>
-                    <td width="60%">Textures Path:
-The path to the folder containing the tile textures</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FTBM_TileGridInfo</td>
-                    <td width="20%">TileGridInfo</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FTransform</td>
-                    <td width="20%">Transform</td>
-                    <td width="60%" />
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Minimap Per Widget Info</div>
-            </td>
-            <td width="25%">
-              <div>TBM Minimap Per Widget Info</div>
-            </td>
-            <td width="50%">
-              <div class="param_name title_style">Properties:</div>
-              <table>
-                <tbody>
-                  <tr>
-                    <td width="20%">FDataTableRowHandle</td>
-                    <td width="20%">CustomData</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">DefaultZoom</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">ZoomLimit</td>
-                    <td width="60%" />
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Minimap Settings</div>
-            </td>
-            <td width="25%">
-              <div>Minimap widget settings</div>
-            </td>
-            <td width="50%">
-              <div class="param_name title_style">Properties:</div>
-              <table>
-                <tbody>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">AdjustGPSPathThicknessbyZoom</td>
-                    <td width="60%">Adjust GPSPath Thickness by Zoom:
-Whether to scale GPS path widgth by minimap zoom</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FGameplayTagQuery</td>
-                    <td width="20%">BlipInstanceQuery</td>
-                    <td width="60%">Blip Instance Query:
-Additionally to setup query the minimap won't display blips whose InstanceTags don't match this query (FTBM_BlipBasic-&gt;BlipDataBasic-&gt;InstanceTags)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FGameplayTagQuery</td>
-                    <td width="20%">BlipSetupQuery</td>
-                    <td width="60%">Blip Setup Query:
-The minimap displays blips that match this query only. Uses setup tags (FTBM_BlipSetupInfo-&gt;Tags)</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">CenterOffset</td>
-                    <td width="60%">Center Offset:
-Offset of the minimap origin if using rectangle shape.Circle is unsupported for now</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">DefaultAreaSize</td>
-                    <td width="60%">Default Area Size:
-Default shown area size. Ie. default zoom</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">DefaultTilt</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector</td>
-                    <td width="20%">EdgeDistanceOffset</td>
-                    <td width="60%">Edge Distance Offset:
-Mannually adjust the minimap edge distance (useful when the minimap mask is smaller than the minimap's desired size)
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">EdgeDistanceOffset</td>
+                    <td width="60%">Mannually adjust the minimap edge distance (useful when the minimap mask is smaller than the minimap's desired size)
 NOTE: X is for circle shape, Y and Z for rectangle shape</td>
                   </tr>
                   <tr>
-                    <td width="20%">FName</td>
-                    <td width="20%">MainGridName</td>
-                    <td width="60%">Main Grid Name:
-Alternative name if not using tags</td>
+                    <td width="20%" class="prop_type_style">ETBM_MinimapRotationDirection</td>
+                    <td width="20%" class="prop_display_name_style">NorthDirection</td>
+                    <td width="60%">The direction towards which the minimap is rotated, ie. North direction</td>
                   </tr>
                   <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">MainGridTag</td>
-                    <td width="60%">Main Grid Tag:
-The grid to use if no valid grid was found</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">TileColorPath</td>
+                    <td width="60%">The path ID from the minimap data table which points to tile texture folder. Default one is used if empty</td>
                   </tr>
                   <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">MaxLoadedTiles</td>
-                    <td width="60%">Max Loaded Tiles:
-How many tiles can be loaded at once
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TileLoaderTickRate</td>
+                    <td width="60%">Update rate of the grid switch and tile loader</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">TileLoaderDistanceMargin</td>
+                    <td width="60%">Additional offset of the tile loading distance in UI space; should be adjusted if the tile loader can't catch up with loading the tiles</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">MaxLoadedTiles</td>
+                    <td width="60%">How many tiles can be loaded at once
 For example it may be desired to display a lower quality map image at lower zoom instead of loading many tiles</td>
                   </tr>
                   <tr>
-                    <td width="20%">ETBM_MinimapRotationDirection</td>
-                    <td width="20%">NorthDirection</td>
-                    <td width="60%">North Direction:
-The direction towards which the minimap is rotated, ie. North direction</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">Opacity</td>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">DefaultTilt</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">RectTopPadding</td>
-                    <td width="60%">Rect Top Padding:
-In case of using both circle and rectangle minimaps, this should be used to adjust the rectangle minimap size</td>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">DefaultAreaSize</td>
+                    <td width="60%">Default shown world area size. Ie. default zoom</td>
                   </tr>
                   <tr>
-                    <td width="20%">ETBM_MinimapRotationMode</td>
-                    <td width="20%">RotationMode</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">BlipSizeMultiplier</td>
+                    <td width="60%">Blip size multiplier that affects all blips displayed by this widget</td>
                   </tr>
                   <tr>
-                    <td width="20%">ETBM_MinimapShape</td>
-                    <td width="20%">Shape</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FGameplayTagQuery</td>
+                    <td width="20%" class="prop_display_name_style">BlipSetupQuery</td>
+                    <td width="60%">The minimap displays blips that match this query only. Uses setup tags (FTBM_BlipSetupInfo-&gt;Tags)</td>
                   </tr>
                   <tr>
-                    <td width="20%">TSoftObjectPtr&lt;UMaterialInterface&gt;</td>
-                    <td width="20%">ShapeMaskMaterials</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FGameplayTagQuery</td>
+                    <td width="20%" class="prop_display_name_style">BlipInstanceQuery</td>
+                    <td width="60%">Additionally to setup query the minimap won't display blips whose InstanceTags don't match this query (FTBM_BlipBasic-&gt;BlipDataBasic-&gt;InstanceTags)</td>
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">TickRate</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">FGameplayTag</td>
-                    <td width="20%">TileColorPath</td>
-                    <td width="60%">Tile Color Path:
-The path ID from the minimap data table which points to tile texture folder. Default one is used if empty</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">TileLoaderDistanceMargin</td>
-                    <td width="60%">Tile Loader Distance Margin:
-Additional offset of the tile loading distance in UI space; should be adjusted if the tile loader can't catch up with loading the tiles</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">TileLoaderTickRate</td>
-                    <td width="60%" />
-                  </tr>
-                  <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">UseMaterialTransform</td>
-                    <td width="60%">Use Material Transform:
-Whether the blip material should perform blip transformations
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">UseMaterialTransform</td>
+                    <td width="60%">Whether the blip material should perform blip transformations
 Blips in this mode don't have the pixel jittering effect but it has a few drawbacks:
      - Blip material has to be setup correctly for it to work
      - Blips are not interactable
 The best use case for it is for the small minimaps in the corner of the screen
 since we don't want ugly jittering and we don't need any interaction with the blips</td>
                   </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">RectTopPadding</td>
+                    <td width="60%">In case of using both circle and rectangle minimaps, this should be used to adjust the rectangle minimap size (so the circle is unaffected)</td>
+                  </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Minimap Speed Settings</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_MinimapSpeedSettings</div>
             </td>
             <td width="25%">
               <div>Dynamic speed and tilt settings</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">EnableSpeedTilt</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">EnableSpeedZoom</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">EnableSpeedZoom</td>
+                    <td width="20%" class="prop_type_style">FVector4</td>
+                    <td width="20%" class="prop_display_name_style">SpeedZoomSettings</td>
+                    <td width="60%">Speed to zoom mapping. XY is the speed range and ZW is the corresponding zoom range</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">ZoomInterpSpeed</td>
+                    <td width="60%">How quick zoom interpolation is</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">EnableSpeedTilt</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">ForceTilt</td>
-                    <td width="60%">Force Tilt:
-Whether the minimap is always tilted ignoring the speed tilt</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ForceTilt</td>
+                    <td width="60%">Whether the minimap is always tilted ignoring the speed tilt</td>
                   </tr>
                   <tr>
-                    <td width="20%">double</td>
-                    <td width="20%">MinTilt</td>
-                    <td width="60%">Min Tilt:
-Tilt value at max speed</td>
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">MinTilt</td>
+                    <td width="60%">Tilt value at max speed</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector4</td>
-                    <td width="20%">SpeedZoomSettings</td>
-                    <td width="60%">Speed Zoom Settings:
-Speed to zoom mapping. XY is the speed range and ZW is the corresponding zoom</td>
+                    <td width="20%" class="prop_type_style">FVector2D</td>
+                    <td width="20%" class="prop_display_name_style">TiltSpeedEnableRange</td>
+                    <td width="60%">Defines the speed range tilt is enabled/disabled. X - enable, Y - disable</td>
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">TiltInterpSpeed</td>
-                    <td width="60%">Tilt Interp Speed:
-Tilt value at max speed</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FVector2D</td>
-                    <td width="20%">TiltSpeedEnableRange</td>
-                    <td width="60%">Tilt Speed Enable Range:
-At what speed to enable/disable tilting. X - enable, Y - disable</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">ZoomInterpSpeed</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">double</td>
+                    <td width="20%" class="prop_display_name_style">TiltInterpSpeed</td>
+                    <td width="60%">How quick tilt interpolation is</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Radar Color Mapping</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_RadarColorMapping</div>
             </td>
             <td width="25%">
               <div>TBM Radar Color Mapping</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FLinearColor</td>
-                    <td width="20%">BackgroundColor</td>
-                    <td width="60%">Background Color:
-BG color passed to minimap info data table</td>
+                    <td width="20%" class="prop_type_style">TMap</td>
+                    <td width="20%" class="prop_display_name_style">Colors</td>
+                    <td width="60%">Colors assigned per physical material</td>
                   </tr>
                   <tr>
-                    <td width="20%">TMap</td>
-                    <td width="20%">Colors</td>
-                    <td width="60%">Colors:
-Colors assigned per physical material</td>
-                  </tr>
-                  <tr>
-                    <td width="20%">FTBM_RadarColors</td>
-                    <td width="20%">FallbackColors</td>
-                    <td width="60%">Fallback Colors:
-Used if no physical material was found
+                    <td width="20%" class="prop_type_style">FTBM_RadarColors</td>
+                    <td width="20%" class="prop_display_name_style">FallbackColors</td>
+                    <td width="60%">Used if no physical material was found
 NOTE: usually GEngine-&gt;DefaultPhysMaterial is used if nothing is assigned in the material or as overrides</td>
                   </tr>
                   <tr>
-                    <td width="20%">FTBM_RadarColors</td>
-                    <td width="20%">LandscapeColors</td>
-                    <td width="60%">Landscape Colors:
-Used on landscapes</td>
+                    <td width="20%" class="prop_type_style">FTBM_RadarColors</td>
+                    <td width="20%" class="prop_display_name_style">LandscapeColors</td>
+                    <td width="60%">Used on landscapes</td>
                   </tr>
                   <tr>
-                    <td width="20%">TEnumAsByte&lt;ETextureRenderTargetFormat&gt;</td>
-                    <td width="20%">RenderFormat</td>
+                    <td width="20%" class="prop_type_style">FLinearColor</td>
+                    <td width="20%" class="prop_display_name_style">BackgroundColor</td>
+                    <td width="60%">BG color passed to minimap info data table</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TEnumAsByte&lt;ESceneCaptureSource&gt;</td>
+                    <td width="20%" class="prop_display_name_style">SceneCaptureSource</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">bool</td>
-                    <td width="20%">SRGB</td>
+                    <td width="20%" class="prop_type_style">TEnumAsByte&lt;ETextureRenderTargetFormat&gt;</td>
+                    <td width="20%" class="prop_display_name_style">RenderFormat</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">TEnumAsByte&lt;ESceneCaptureSource&gt;</td>
-                    <td width="20%">SceneCaptureSource</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TargetGamma</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">TargetGamma</td>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">SRGB</td>
                     <td width="60%" />
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">ConsoleCommands</td>
+                    <td width="60%">Console commands to set when capturing tiles</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Radar Colors</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_RadarColors</div>
             </td>
             <td width="25%">
               <div>Color data assigned to a primitive</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">FLinearColor</td>
-                    <td width="20%">Color</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">TObjectPtr&lt;UMaterialInterface&gt;</td>
+                    <td width="20%" class="prop_display_name_style">MeshMaterial</td>
+                    <td width="60%">The material to assign to a primitive</td>
                   </tr>
                   <tr>
-                    <td width="20%">UMaterialInterface*</td>
-                    <td width="20%">MeshMaterial</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FLinearColor</td>
+                    <td width="20%" class="prop_display_name_style">Color</td>
+                    <td width="60%">The color to assign to a primitive (as a parameter into the mesh material)</td>
                   </tr>
                   <tr>
-                    <td width="20%">FVector</td>
-                    <td width="20%">MeshOffset</td>
-                    <td width="60%" />
+                    <td width="20%" class="prop_type_style">FVector</td>
+                    <td width="20%" class="prop_display_name_style">MeshOffset</td>
+                    <td width="60%">World position offset (useful for fixing Z fighting issues)</td>
                   </tr>
                 </tbody>
               </table>
             </td>
           </tr>
           <tr>
-            <td width="25%">
-              <div class="param_name title_style">TBM Tile Grid Info</div>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_RegisteredGrid</div>
             </td>
             <td width="25%">
-              <div>MINIMAP</div>
+              <div>Holds information about a registered grid instance</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div class="param_name title_style">Properties:</div>
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">Columns</td>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">GridTag</td>
+                    <td width="60%">The grid to register (tag)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FName</td>
+                    <td width="20%" class="prop_display_name_style">GridName</td>
+                    <td width="60%">The grid to register (name)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FGameplayTag</td>
+                    <td width="20%" class="prop_display_name_style">IdentifierTag</td>
+                    <td width="60%">ID of this register info. Used for the equal check (if empty grid transform is used instead)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">GridTransform</td>
+                    <td width="60%">The transform of the grid itself (where in the world it is displayed)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">TArray</td>
+                    <td width="20%" class="prop_display_name_style">Triggers</td>
+                    <td width="60%">The list of triggers. If any of the trigger is overlapped by the player their UI map will change the displayed grid</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FBox</td>
+                    <td width="20%" class="prop_display_name_style">TriggerBounds</td>
+                    <td width="60%">Combined bounds of all the triggers. Used for simplified fast checks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_RegisteredGridTrigger</div>
+            </td>
+            <td width="25%">
+              <div>Holds information about a single grid trigger (world transform and shape)</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">FTransform</td>
+                    <td width="20%" class="prop_display_name_style">TriggerTransform</td>
+                    <td width="60%">World transform of the trigger</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_TileGridInfo</div>
+            </td>
+            <td width="25%">
+              <div>Holds information about the number of tiles and the world size of a grid</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">Rows</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">int32</td>
-                    <td width="20%">Rows</td>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">Columns</td>
                     <td width="60%" />
                   </tr>
                   <tr>
-                    <td width="20%">float</td>
-                    <td width="20%">TileWorldSize</td>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TileWorldSize</td>
                     <td width="60%" />
                   </tr>
                 </tbody>
@@ -1467,10 +1450,10 @@ Used on landscapes</td>
       <table>
         <tbody>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_BlipReplicationType</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div>ETBM Blip Replication Type</div>
             </td>
             <td width="25%">
@@ -1482,10 +1465,10 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_BlipSourceDestroyHandling</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div>Defines what to do with a blip if it's source location component is destroyed/streamed out (dynamic blips)</div>
             </td>
             <td width="25%">
@@ -1496,10 +1479,10 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_BlipType</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div>BLIPS</div>
             </td>
             <td width="25%">
@@ -1510,10 +1493,10 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_MenuMapPanningState</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div>ETBM Menu Map Panning State</div>
             </td>
             <td width="25%">
@@ -1524,11 +1507,11 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_MinimapRotationDirection</div>
             </td>
-            <td width="50%">
-              <div>ETBM Minimap Rotation Direction</div>
+            <td width="60%">
+              <div>Defines the minimap rotation (north) direction</div>
             </td>
             <td width="25%">
               <pre>nY (Negative Y)
@@ -1539,11 +1522,11 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_MinimapRotationMode</div>
             </td>
-            <td width="50%">
-              <div>ETBM Minimap Rotation Mode</div>
+            <td width="60%">
+              <div>Defines the minimap rotation mode</div>
             </td>
             <td width="25%">
               <pre>Fixed
@@ -1552,11 +1535,11 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_MinimapShape</div>
             </td>
-            <td width="50%">
-              <div>ETBM Minimap Shape</div>
+            <td width="60%">
+              <div>Defines the minimap shape</div>
             </td>
             <td width="25%">
               <pre>Circle
@@ -1566,10 +1549,10 @@ ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>
           <tr>
-            <td width="25%">
+            <td width="15%">
               <div class="param_name title_style">ETBM_PlayerBlipReplicationMethod</div>
             </td>
-            <td width="50%">
+            <td width="60%">
               <div>ETBM Player Blip Replication Method</div>
             </td>
             <td width="25%">

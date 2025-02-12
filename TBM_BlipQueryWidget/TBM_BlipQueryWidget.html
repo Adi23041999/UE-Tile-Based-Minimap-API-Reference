@@ -16,39 +16,35 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_BlipQueryWidget</i>
       </p>
-      <p>Allows cycling through the owner player's blip queries (to display different sets of blips)</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Allows cycling through the owner player's blip queries (to display different sets of blips)</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">HasQuery</td>
-            <td width="60%">Has Query:
-Whether the owner player controller has an active blip query</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">ResetonDestruct</td>
+            <td width="60%">Whether the blip query is reset to default one when the widget is removed</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_BlipQuery</td>
-            <td width="20%">Query</td>
-            <td width="60%">Query:
-Cached query info</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">HasQuery</td>
+            <td width="60%">Whether the owner player controller has an active blip query</td>
           </tr>
           <tr>
-            <td width="20%">int32</td>
-            <td width="20%">QueryIndex</td>
-            <td width="60%">Query Index:
-Currently cycled query (QueryTags index)</td>
+            <td width="20%" class="prop_type_style">FTBM_BlipQuery</td>
+            <td width="20%" class="prop_display_name_style">Query</td>
+            <td width="60%">Cached query info</td>
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">QueryTags</td>
-            <td width="60%">Query Tags:
-Cached query tags (Query-&gt;BlipSetupTagQueries keys)</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">QueryTags</td>
+            <td width="60%">Cached query tags (Query-&gt;BlipSetupTagQueries keys)</td>
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">ResetonDestruct</td>
-            <td width="60%">Reset on Destruct:
-Whether the blip query is reset to default one when the widget is removed</td>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">QueryIndex</td>
+            <td width="60%">Currently cycled query (QueryTags index)</td>
           </tr>
         </tbody>
       </table>

@@ -16,42 +16,40 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget &gt; TBM_ActionGameMinimapWidget</i>
       </p>
-      <p>Minimap that dynamically updates zoom and tilt based on player speed</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Minimap that dynamically updates zoom and tilt based on player speed</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">double</td>
-            <td width="20%">DesiredTilt</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UBorder&gt;</td>
+            <td width="20%" class="prop_display_name_style">SafeZoneBorder</td>
+            <td width="60%">We need a bit of padding to make sure material blips are displayed when on the edge of the minimap</td>
           </tr>
           <tr>
-            <td width="20%">double</td>
-            <td width="20%">DesiredZoom</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">FTBM_MinimapSpeedSettings</td>
+            <td width="20%" class="prop_display_name_style">SpeedSettings</td>
+            <td width="60%">Dynamic zoom and tilt settings</td>
           </tr>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">PlayerSpeed</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">SkipSmoothInterpolation</td>
+            <td width="60%">Set to true to force current zoom and tilt to the desired values skipping smooth interpolation</td>
           </tr>
           <tr>
-            <td width="20%">UBorder*</td>
-            <td width="20%">SafeZoneBorder</td>
-            <td width="60%">Safe Zone Border:
-We need a bit of padding to make sure material blips are displayed when on the edge of the minimap</td>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">PlayerSpeed</td>
+            <td width="60%">Current player speed</td>
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">SkipSmoothInterpolation</td>
-            <td width="60%">Skip Smooth Interpolation:
-Set to true to force current zoom and tilt to the desired values skipping smooth interpolation</td>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">DesiredZoom</td>
+            <td width="60%">The zoom value we interp towards</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_MinimapSpeedSettings</td>
-            <td width="20%">SpeedSettings</td>
-            <td width="60%">Speed Settings:
-Dynamic zoom and tilt settings</td>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">DesiredTilt</td>
+            <td width="60%">The tilt value we interp towards</td>
           </tr>
         </tbody>
       </table>

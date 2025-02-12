@@ -16,52 +16,46 @@
         <b>Hierarchy: </b>
         <i>Object &gt; DeveloperSettings &gt; DeveloperSettingsBackedByCVars &gt; TBM_DeveloperSettings (Tile Based Minimap)</i>
       </p>
-      <p>TBM Plugin settings</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Configure the Tile Based Minimap plugin</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">AllowBlipTeleport</td>
-            <td width="60%">Allow Blip Teleport:
-Whether blip teleport is allowed by default.
+            <td width="20%" class="prop_type_style">TSoftClassPtr&lt;UTBM_Subsystem&gt; </td>
+            <td width="20%" class="prop_display_name_style">SubsystemtoInit</td>
+            <td width="60%">The TBM subsystem to initialize</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">MinimapSetup</td>
+            <td width="60%">Default minimap grid info</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">BlipSetup</td>
+            <td width="60%">Default blip info</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">EffectsSetup</td>
+            <td width="60%">Default blip effects info</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">BlipTransformInterpSpeed</td>
+            <td width="60%">Interp speed for replicated blips</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">WarnMissingBlipSetup</td>
+            <td width="60%">Whether to issue a warning about empty blip setup/effects setups</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">AllowBlipTeleport</td>
+            <td width="60%">Whether blip teleport is allowed by default.
 NOTE: this affects shipping builds, in dev builds teleport is always allowed</td>
-          </tr>
-          <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">BlipSetup</td>
-            <td width="60%">Blip Setup:
-Default blip info</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">BlipTransformInterpSpeed</td>
-            <td width="60%">Blip Transform Interp Speed:
-Interp speed for replicated blips</td>
-          </tr>
-          <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">EffectsSetup</td>
-            <td width="60%">Effects Setup:
-Default blip effects info</td>
-          </tr>
-          <tr>
-            <td width="20%">FGameplayTagContainer</td>
-            <td width="20%">InitialRegisteredGrids</td>
-            <td width="60%">Initial Registered Grids:
-Grids to register once the subsystem is initialized</td>
-          </tr>
-          <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">MinimapSetup</td>
-            <td width="60%">Minimap Setup:
-Default minimap grid info</td>
-          </tr>
-          <tr>
-            <td width="20%">TSoftClassPtr&lt;UTBM_Subsystem&gt; </td>
-            <td width="20%">SubsystemtoInit</td>
-            <td width="60%">Subsystem to Init:
-The TBM subsystem to initialize</td>
           </tr>
         </tbody>
       </table>

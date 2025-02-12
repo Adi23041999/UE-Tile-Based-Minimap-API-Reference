@@ -16,224 +16,197 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Actor &gt; TBM_TileRenderer</i>
       </p>
-      <p>Renders and saves radar tiles onto the disk</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Renders and saves radar tiles onto the disk</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">ActorClassFilter</td>
-            <td width="60%">Actor Class Filter:
-Only render actors that are subclass of one of the classes in the list</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;USceneComponent&gt;</td>
+            <td width="20%" class="prop_display_name_style">RenderRoot</td>
+            <td width="60%">DEFAULT SUBOBJECTS</td>
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UMaterialInterface&gt;</td>
-            <td width="20%">CachedLandscapeMaterial</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;USceneCaptureComponent2D&gt;</td>
+            <td width="20%" class="prop_display_name_style">TileCapture</td>
+            <td width="60%">Screen capture responsible for capturing the tile images</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UTBM_GridTriggerBox&gt;</td>
+            <td width="20%" class="prop_display_name_style">GridBounds</td>
+            <td width="60%">Defines the size of the map. Should encompass the level to be captured</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">Refresh</td>
+            <td width="60%">Hit to refresh the visualizator</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">LockTransform</td>
+            <td width="60%">If true the actor can't be moved. Useful to prevent accidential movement</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">Visualize</td>
+            <td width="60%">Whether to show the visualization data (grid and tile IDs)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">ShowinGame</td>
+            <td width="60%">Whether to show the visualization in game</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FColor</td>
+            <td width="20%" class="prop_display_name_style">TileRenderedColor</td>
+            <td width="60%">Color of the tile if it can be rendered</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FColor</td>
+            <td width="20%" class="prop_display_name_style">TileUnrenderedColor</td>
+            <td width="60%">Color of the tile if it can NOT be rendered</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">LineThickness</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UTextureRenderTarget2D&gt;</td>
-            <td width="20%">CaptureTarget</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">TextSize</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">CenterTile</td>
-            <td width="60%">Center Tile:
-CALCULATED INFO</td>
+            <td width="20%" class="prop_type_style">FVector</td>
+            <td width="20%" class="prop_display_name_style">VisualOffset</td>
+            <td width="60%">Additional world offset of the visualization data on top of RenderOffset</td>
           </tr>
           <tr>
-            <td width="20%">FDataTableRowHandle</td>
-            <td width="20%">ColorID</td>
-            <td width="60%">Color ID:
-Optional; eg. we can have different color setups for the minimap and the menu map</td>
+            <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+            <td width="20%" class="prop_display_name_style">GridID</td>
+            <td width="60%">The data table we write the calculated info to</td>
           </tr>
           <tr>
-            <td width="20%">int32</td>
-            <td width="20%">Columns</td>
+            <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+            <td width="20%" class="prop_display_name_style">ColorID</td>
+            <td width="60%">Optional; eg. we can have different color setups for the minimap and the menu map</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FString</td>
+            <td width="20%" class="prop_display_name_style">FileName</td>
+            <td width="60%">Name of the saved image file. Tile ID and file type is appended to it before saving so the final name will be FileNameXX.png where XX is the tile ID, eg. 01</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">FileNameOffsetIndex</td>
+            <td width="60%">Whether the saved image file tile ID should start at 00 or be offset. Should be adjusted eg. if photo editing software batch exports tiles at index 01</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">UpdateDataTableAfterCapture</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">ComponentClassFilter</td>
-            <td width="60%">Component Class Filter:
-Only render components that are subclass of one of the classes in the list</td>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">TileRadius</td>
+            <td width="60%">Half size of a single tile</td>
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">DebugTextRenderComps</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">FVector</td>
+            <td width="20%" class="prop_display_name_style">RenderOffset</td>
+            <td width="60%">Offset of the render location. Eg. adjust Z to render from above</td>
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">DrawingDebugLines</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">RenderStartingTileID</td>
+            <td width="60%">Whether to render the specific tile only. Set to &lt; 0 to render all tiles</td>
           </tr>
           <tr>
-            <td width="20%">FString</td>
-            <td width="20%">FileName</td>
-            <td width="60%">File Name:
-Name of the saved image file. Tile ID and file type is appended to it before saving so the final name will be FileNameXX.png where XX is the tile ID, eg. 01</td>
-          </tr>
-          <tr>
-            <td width="20%">int32</td>
-            <td width="20%">FileNameOffsetIndex</td>
-            <td width="60%">File Name Offset Index:
-Whether the saved image file tile ID should start at 00 or be offset. Should be adjusted eg. if photo editing software batch exports tiles at index 01</td>
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">FirstTile</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">TObjectPtr&lt;UTBM_GridTriggerBox&gt;</td>
-            <td width="20%">GridBounds</td>
-            <td width="60%">Grid Bounds:
-Defines the size of the map. Should encompass the level to be captured</td>
-          </tr>
-          <tr>
-            <td width="20%">FDataTableRowHandle</td>
-            <td width="20%">GridID</td>
-            <td width="60%">Grid ID:
-The data table we write the calculated info to</td>
-          </tr>
-          <tr>
-            <td width="20%">FTransform</td>
-            <td width="20%">GridTransform</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">LineThickness</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">LockTransform</td>
-            <td width="60%">Lock Transform:
-If true the actor can't be moved. Useful to prevent accidential movement</td>
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">Refresh</td>
-            <td width="60%">Refresh:
-Hit to refresh the visualizator</td>
-          </tr>
-          <tr>
-            <td width="20%">int32</td>
-            <td width="20%">RenderNeighbours</td>
-            <td width="60%">Render Neighbours:
-If &gt; 0 and RenderStartingTileID is &gt; 0 render the neighbours of the starting ID
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">RenderNeighbours</td>
+            <td width="60%">If &gt; 0 and RenderStartingTileID is &gt; 0 render the neighbours of the starting ID
 Eg. if set to 1 we'll render 3x3 grid of the starting tile and its neighbours
 The tiles to be rendered are displayed with TileRenderedColor</td>
           </tr>
           <tr>
-            <td width="20%">FVector</td>
-            <td width="20%">RenderOffset</td>
-            <td width="60%">Render Offset:
-Offset of the render location. Eg. adjust Z to render from above</td>
-          </tr>
-          <tr>
-            <td width="20%">TObjectPtr&lt;USceneComponent&gt;</td>
-            <td width="20%">RenderRoot</td>
-            <td width="60%">Render Root:
-DEFAULT SUBOBJECTS</td>
-          </tr>
-          <tr>
-            <td width="20%">int32</td>
-            <td width="20%">RenderStartingTileID</td>
-            <td width="60%">Render Starting Tile ID:
-Whether to render the specific tile only. Set to &lt; 0 to render all tiles</td>
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">Resolution</td>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">Resolution</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">int32</td>
-            <td width="20%">Rows</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">ActorClassFilter</td>
+            <td width="60%">Only render actors that are subclass of one of the classes in the list</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">ComponentClassFilter</td>
+            <td width="60%">Only render components that are subclass of one of the classes in the list</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">ShowOnlyList</td>
+            <td width="60%">If not empty the visualizator will render only the actors in the list. Useful for interiors</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">CenterTile</td>
+            <td width="60%">CALCULATED INFO</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">Rows</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">ShowOnlyList</td>
-            <td width="60%">Show Only List:
-If not empty the visualizator will render only the actors in the list. Useful for interiors</td>
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">ShowinGame</td>
-            <td width="60%">Show in Game:
-Whether to show the visualization in game</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">SphereRadius</td>
+            <td width="20%" class="prop_type_style">int32</td>
+            <td width="20%" class="prop_display_name_style">Columns</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">TextSize</td>
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">TileSize</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;USceneCaptureComponent2D&gt;</td>
-            <td width="20%">TileCapture</td>
-            <td width="60%">Tile Capture:
-Screen capture responsible for capturing the tile images</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">TileRadius</td>
-            <td width="60%">Tile Radius:
-Half size of a single tile</td>
-          </tr>
-          <tr>
-            <td width="20%">FColor</td>
-            <td width="20%">TileRenderedColor</td>
-            <td width="60%">Tile Rendered Color:
-Color of the tile if it can be rendered</td>
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">TileSize</td>
+            <td width="20%" class="prop_type_style">FTransform</td>
+            <td width="20%" class="prop_display_name_style">GridTransform</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FColor</td>
-            <td width="20%">TileUnrenderedColor</td>
-            <td width="60%">Tile Unrendered Color:
-Color of the tile if it can NOT be rendered</td>
-          </tr>
-          <tr>
-            <td width="20%">TArray</td>
-            <td width="20%">TilestoRender</td>
-            <td width="60%">Tiles to Render:
-List of tiles to render based on the capture settings. Empty in case we want to render all the tiles</td>
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">UpdateDataTableAfterCapture</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">SphereRadius</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TWeakObjectPtr&lt;ALandscape&gt;</td>
-            <td width="20%">UpdatedLandscape</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">TilestoRender</td>
+            <td width="60%">List of tiles to render based on the capture settings. Empty in case we want to render all the tiles</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UTextureRenderTarget2D&gt;</td>
+            <td width="20%" class="prop_display_name_style">CaptureTarget</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FVector</td>
-            <td width="20%">VisualOffset</td>
-            <td width="60%">Visual Offset:
-Additional world offset of the visualization data on top of RenderOffset</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">DrawingDebugLines</td>
+            <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">Visualize</td>
-            <td width="60%">Visualize:
-Whether to show the visualization data (grid and tile IDs)</td>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">DebugTextRenderComps</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;ALandscape&gt;</td>
+            <td width="20%" class="prop_display_name_style">UpdatedLandscape</td>
+            <td width="60%" />
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UMaterialInterface&gt;</td>
+            <td width="20%" class="prop_display_name_style">CachedLandscapeMaterial</td>
+            <td width="60%" />
           </tr>
         </tbody>
       </table>
@@ -312,12 +285,12 @@ Whether to show the visualization data (grid and tile IDs)</td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetCaptureLocation.html">Get Capture Location</a>
+              <a href="./nodes/GetCapturePath.html">Get Capture Path</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetCapturePath.html">Get Capture Path</a>
+              <a href="./nodes/GetCaptureTransform.html">Get Capture Transform</a>
             </td>
           </tr>
           <tr>

@@ -16,21 +16,35 @@
         <b>Hierarchy: </b>
         <i>Object &gt; ActorComponent &gt; SceneComponent &gt; PrimitiveComponent &gt; ShapeComponent &gt; BoxComponent (Box Collision) &gt; TBM_GridTriggerBox</i>
       </p>
-      <p>A box used to register minimap grids (levels). If a player enters a registered grid their displayed grid changes</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">A box used to register minimap grids (levels). If a player enters a registered grid their displayed grid changes</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">FGameplayTag</td>
-            <td width="20%">GridtoRegister</td>
-            <td width="60%">Grid to Register:
-The tag of the grid to register</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">Enabled</td>
+            <td width="60%">Whether this trigger should be registered</td>
           </tr>
           <tr>
-            <td width="20%">FDataTableRowHandle</td>
-            <td width="20%">GridtoRegisterfromTable</td>
-            <td width="60%">Grid to Register from Table:
-Instead of a tag. register the grid by a data table reference. The grid info will be automatically added to the subsystem. NOTE: grid tag needs to be empty to use this</td>
+            <td width="20%" class="prop_type_style">FGameplayTag</td>
+            <td width="20%" class="prop_display_name_style">GridtoRegister</td>
+            <td width="60%">The tag of the grid to register</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FDataTableRowHandle</td>
+            <td width="20%" class="prop_display_name_style">GridtoRegisterfromTable</td>
+            <td width="60%">Instead of a tag register the grid by a data table reference. The grid info will be automatically added to the subsystem. NOTE: grid tag needs to be empty to use this</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTBM_RegisteredGrid</td>
+            <td width="20%" class="prop_display_name_style">GridRegisterInfo</td>
+            <td width="60%">The actual info that will be registered withing the subsystem, the grid name is filled depending on which method above is used</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">AutoFillTriggerInfo</td>
+            <td width="60%">Whether to fill the trigger info automatically on the component's BeginPlay</td>
           </tr>
         </tbody>
       </table>

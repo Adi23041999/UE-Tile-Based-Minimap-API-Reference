@@ -16,86 +16,89 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_MinimapWidget &gt; TBM_MenuMapWidget</i>
       </p>
-      <p>Widget showing a big menu map with interactable blips</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Widget showing a big menu map with interactable blips</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">float</td>
-            <td width="20%">BlipAddKeyHoldTime</td>
+            <td width="20%" class="prop_type_style">FTBM_MenuMapSettings</td>
+            <td width="20%" class="prop_display_name_style">MenuMapSettings</td>
+            <td width="60%">Menu map widget settings</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FTBM_MenuMapKeyBindings</td>
+            <td width="20%" class="prop_display_name_style">MenuMapKeyBindings</td>
+            <td width="60%">Key bindings for menu map interaction</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">BlipAddKeyHoldTime</td>
+            <td width="60%">The time the user is holding down the blip add key</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">HoldingBlipAddKey</td>
+            <td width="60%">Whether the user is holding down the blip add key</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">CurrentMousePosition</td>
+            <td width="60%">Current mouse position on the viewport</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">PreviousMousePosition</td>
+            <td width="60%">Previous frame mouse position on the viewport</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">DeltaMousePosition</td>
+            <td width="60%">Difference between current and previous mouse position</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">TotalPanningOffset</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UTBM_BlipQueryWidget&gt;</td>
-            <td width="20%">BlipQueryWidget</td>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">CurrentPanningOffset</td>
+            <td width="60%">Panning offset this frame</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">ETBM_MenuMapPanningState</td>
+            <td width="20%" class="prop_display_name_style">PanningState</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">CanOverscroll</td>
-            <td width="60%">Can Overscroll:
-Whether overscroll can be used (if mouse panning)</td>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">SavedPrePanningMousePosition</td>
+            <td width="60%">Saved mouse position before the user started panning with keyboard</td>
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">CurrentMousePosition</td>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">PanningTime</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">CurrentPanningOffset</td>
-            <td width="60%">Current Panning Offset:
-Panning offset this frame</td>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">CanOverscroll</td>
+            <td width="60%">Whether overscroll can be used (set to true if mouse panning)</td>
           </tr>
           <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">DeltaMousePosition</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">double</td>
+            <td width="20%" class="prop_display_name_style">NavigationZoom</td>
+            <td width="60%">Current zoom from mouse wheel/keyboard/pad</td>
           </tr>
           <tr>
-            <td width="20%">bool</td>
-            <td width="20%">HoldingBlipAddKey</td>
-            <td width="60%" />
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">SkipSmoothInterpolation</td>
+            <td width="60%">If true zoom will be forced to the desired value without smooth interpolation</td>
           </tr>
           <tr>
-            <td width="20%">FTBM_MenuMapKeyBindings</td>
-            <td width="20%">MenuMapKeyBindings</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FTBM_MenuMapSettings</td>
-            <td width="20%">MenuMapSettings</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">double</td>
-            <td width="20%">NavigationZoom</td>
-            <td width="60%">Navigation Zoom:
-Current zoom from mouse wheel/keyboard/pad</td>
-          </tr>
-          <tr>
-            <td width="20%">ETBM_MenuMapPanningState</td>
-            <td width="20%">PanningState</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">float</td>
-            <td width="20%">PanningTime</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">PreviousMousePosition</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">bool</td>
-            <td width="20%">SkipSmoothInterpolation</td>
-            <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%">FVector2D</td>
-            <td width="20%">TotalPanningOffset</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UTBM_BlipQueryWidget&gt;</td>
+            <td width="20%" class="prop_display_name_style">BlipQueryWidget</td>
             <td width="60%" />
           </tr>
         </tbody>
@@ -120,17 +123,17 @@ Current zoom from mouse wheel/keyboard/pad</td>
           </tr>
           <tr>
             <td>
+              <a href="./nodes/UpdateZoom.html">Event Update Zoom</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/GetKeyPanningDirMultiplier.html">Get Key Panning Dir Multiplier</a>
             </td>
           </tr>
           <tr>
             <td>
               <a href="./nodes/GetKeyPanningNavDir.html">Get Key Panning Nav Dir</a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="./nodes/GetPanningDirFromNorthDir.html">Get Panning Dir from North Dir</a>
             </td>
           </tr>
           <tr>
@@ -150,12 +153,12 @@ Current zoom from mouse wheel/keyboard/pad</td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/OnPanningStateChanged.html">On Panning State Changed</a>
+              <a href="./nodes/Quit.html">Quit</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/Quit.html">Quit</a>
+              <a href="./nodes/UpdatePanningState.html">Update Panning State</a>
             </td>
           </tr>
           <tr>

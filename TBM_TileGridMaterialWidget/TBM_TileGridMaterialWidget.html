@@ -16,32 +16,31 @@
         <b>Hierarchy: </b>
         <i>Object &gt; Visual &gt; Widget &gt; UserWidget &gt; TBM_TileGridWidget &gt; TBM_TileGridMaterialWidget</i>
       </p>
-      <p>Uses simple UImage widgets to display the grid. Transform is calculated through it's materials</p>
+      <h2 class="title_style">Description</h2>
+      <p class="description_style">Uses simple UImage widgets to display the grid. Transform is calculated through it's materials.
+Player cannot interact with blips.</p>
       <h2 class="title_style">Properties</h2>
       <table>
         <tbody>
           <tr>
-            <td width="20%">UOverlay*</td>
-            <td width="20%">GridOverlay</td>
-            <td width="60%">Grid Overlay:
-The container of the tiles</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UOverlay&gt;</td>
+            <td width="20%" class="prop_display_name_style">GridOverlay</td>
+            <td width="60%">The container of the tiles</td>
           </tr>
           <tr>
-            <td width="20%">TObjectPtr&lt;UMaterial&gt;</td>
-            <td width="20%">MaterialTransform</td>
-            <td width="60%">Material Transform:
-Material to use for the material grid</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UNamedSlot&gt;</td>
+            <td width="20%" class="prop_display_name_style">SlotHelper</td>
+            <td width="60%">helpers for attaching other widgets to material grid</td>
           </tr>
           <tr>
-            <td width="20%">UOverlay*</td>
-            <td width="20%">OverlayHelper</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UOverlay&gt;</td>
+            <td width="20%" class="prop_display_name_style">OverlayHelper</td>
             <td width="60%" />
           </tr>
           <tr>
-            <td width="20%">UNamedSlot*</td>
-            <td width="20%">SlotHelper</td>
-            <td width="60%">Slot Helper:
-helpers for attaching other widgets to material grid</td>
+            <td width="20%" class="prop_type_style">TObjectPtr&lt;UMaterial&gt;</td>
+            <td width="20%" class="prop_display_name_style">MaterialTransform</td>
+            <td width="60%">Material to use for the material grid</td>
           </tr>
         </tbody>
       </table>
