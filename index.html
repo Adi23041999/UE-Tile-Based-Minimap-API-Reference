@@ -951,6 +951,13 @@ Scale: grid world size (for X and Y it's tile count * tile world radius, Z is ta
               <table>
                 <tbody>
                   <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">ResetPositiononVisibilityChange</td>
+                    <td width="60%">Whether to reset the menu map position and zoom when the player enters menu map (after it was hidden)
+Only works when the widget is shown due to visibility change (not recreated)
+If false keeps user's panning offset and zoom</td>
+                  </tr>
+                  <tr>
                     <td width="20%" class="prop_type_style">double</td>
                     <td width="20%" class="prop_display_name_style">ZoomInterpSpeed</td>
                     <td width="60%">How fast to interp to desired zoom</td>
@@ -989,6 +996,11 @@ Scale: grid world size (for X and Y it's tile count * tile world radius, Z is ta
                     <td width="20%" class="prop_type_style">float</td>
                     <td width="20%" class="prop_display_name_style">MarkerAddTime</td>
                     <td width="60%">How much time it takes while holding waypoint add key to add a marker instead</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">DestroyonQuit</td>
+                    <td width="60%">Whether to destroy or hide the widget on quit</td>
                   </tr>
                   <tr>
                     <td width="20%" class="prop_type_style">bool</td>
@@ -1142,20 +1154,9 @@ NOTE: X is for circle shape, Y and Z for rectangle shape</td>
                     <td width="60%">The path ID from the minimap data table which points to tile texture folder. Default one is used if empty</td>
                   </tr>
                   <tr>
-                    <td width="20%" class="prop_type_style">float</td>
-                    <td width="20%" class="prop_display_name_style">TileLoaderTickRate</td>
-                    <td width="60%">Update rate of the grid switch and tile loader</td>
-                  </tr>
-                  <tr>
-                    <td width="20%" class="prop_type_style">FVector2D</td>
-                    <td width="20%" class="prop_display_name_style">TileLoaderDistanceMargin</td>
-                    <td width="60%">Additional offset of the tile loading distance in UI space; should be adjusted if the tile loader can't catch up with loading the tiles</td>
-                  </tr>
-                  <tr>
-                    <td width="20%" class="prop_type_style">int32</td>
-                    <td width="20%" class="prop_display_name_style">MaxLoadedTiles</td>
-                    <td width="60%">How many tiles can be loaded at once
-For example it may be desired to display a lower quality map image at lower zoom instead of loading many tiles</td>
+                    <td width="20%" class="prop_type_style">FTBM_TileLoaderSettigs</td>
+                    <td width="20%" class="prop_display_name_style">TileLoaderSettings</td>
+                    <td width="60%" />
                   </tr>
                   <tr>
                     <td width="20%" class="prop_type_style">double</td>
@@ -1437,6 +1438,72 @@ NOTE: usually GEngine-&gt;DefaultPhysMaterial is used if nothing is assigned in 
                     <td width="20%" class="prop_type_style">float</td>
                     <td width="20%" class="prop_display_name_style">TileWorldSize</td>
                     <td width="60%" />
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
+              <div class="param_name title_style">FTBM_TileLoaderSettigs</div>
+            </td>
+            <td width="25%">
+              <div>Holds information about tile loading</div>
+            </td>
+            <td width="60%">
+              <div class="param_name title_style">Properties:</div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TileLoaderTickRate</td>
+                    <td width="60%">Update rate of the grid switch and tile loader</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">MaxAmountOfTilesProcessedforLoading</td>
+                    <td width="60%">If this limit is exceeded no tiles are loaded at all
+This value is calculated based on the player's screen corners
+
+Basically game calculates the amount of tiles that would fit into the displayed area
+and checks if the number is equal or smaller than this value</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">MaxAmountOfLoadedTiles</td>
+                    <td width="60%">Maximum amount of loaded (in memory) tile textures
+Garbage collection is forced if this limit is exceeded
+Set to &lt;= 0 to disable (won't trigger GCs)
+DOES NOT WORK IN EDITOR</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">int32</td>
+                    <td width="20%" class="prop_display_name_style">MaxAmountOfDisplayedTiles</td>
+                    <td width="60%">Maximum amount of displayed tile textures. Should be smaller than the above value (unless that setting is disabled)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">bool</td>
+                    <td width="20%" class="prop_display_name_style">CanEverForceGC</td>
+                    <td width="60%">Whether the widget is allowed to trigger garbage collection at all</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">ForcedGCInterval</td>
+                    <td width="60%">Limits forced GCs to once per the given value (in seconds)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">ScreenScaleMultiplier</td>
+                    <td width="60%">Changes the area that is used for displaying tiles (ie. scales the screen size for the tile loader)</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">ScreenScaleDownStep</td>
+                    <td width="60%">If we're exceeding the limit of max amount of tiles to display
+'scale down' the screen gradually to skip the tiles near the screen borders
+This value is subtracted from current scale down ratio each step
+Scale down ratio is a value between 0.0 and 1.0
+(eg. setting to 0.1f will use 10 steps in worst case)</td>
                   </tr>
                 </tbody>
               </table>

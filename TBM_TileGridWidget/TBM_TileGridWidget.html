@@ -69,6 +69,11 @@ If true the minimap skips some blip transform calculations
 Should be false on material based grids</td>
           </tr>
           <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">EnableWidgetPool</td>
+            <td width="60%">Whether to keep removed tile widgets in a pool for quick reuse (does not prevent GC)</td>
+          </tr>
+          <tr>
             <td width="20%" class="prop_type_style">TArray</td>
             <td width="20%" class="prop_display_name_style">TileWidgets</td>
             <td width="60%">Constructed tile widgets by tile ID</td>
@@ -77,11 +82,6 @@ Should be false on material based grids</td>
             <td width="20%" class="prop_type_style">TWeakObjectPtr&lt;UTBM_MinimapWidget&gt;</td>
             <td width="20%" class="prop_display_name_style">MinimapWidget</td>
             <td width="60%" />
-          </tr>
-          <tr>
-            <td width="20%" class="prop_type_style">bool</td>
-            <td width="20%" class="prop_display_name_style">NextLoadImmediate</td>
-            <td width="60%">If true tile textures will be loaded synchronously (can cause a hitch)</td>
           </tr>
         </tbody>
       </table>

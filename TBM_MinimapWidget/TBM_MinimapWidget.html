@@ -83,9 +83,14 @@ NOTE: to update the minimap every game tick set this variable to be &lt;= 0.0</t
             <td width="60%">Currently active minimap grid</td>
           </tr>
           <tr>
+            <td width="20%" class="prop_type_style">TArray</td>
+            <td width="20%" class="prop_display_name_style">TileTextureList</td>
+            <td width="60%">List of tile textures for the active grid. Index is the tile id</td>
+          </tr>
+          <tr>
             <td width="20%" class="prop_type_style">TSet</td>
-            <td width="20%" class="prop_display_name_style">LoadedTiles</td>
-            <td width="60%">Currently displayed grid tiles</td>
+            <td width="20%" class="prop_display_name_style">DisplayedTiles</td>
+            <td width="60%">List of tiles that should be displayed on the screen (includes those that are not loaded yet)</td>
           </tr>
           <tr>
             <td width="20%" class="prop_type_style">float</td>
@@ -135,6 +140,11 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           </tr>
           <tr>
             <td>
+              <a href="./nodes/InitializeMinimap.html">Event Initialize Minimap</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/OnMaterialBlipUpdate.html">Event On Material Blip Update</a>
             </td>
           </tr>
@@ -170,6 +180,16 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           </tr>
           <tr>
             <td>
+              <a href="./nodes/FindZForCoord.html">Find ZFor Coord</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/ForceGarbageCollection.html">Force Garbage Collection</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/GetActiveGrid.html">Get Active Grid</a>
             </td>
           </tr>
@@ -200,6 +220,11 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           </tr>
           <tr>
             <td>
+              <a href="./nodes/GetDisplayedTiles.html">Get Displayed Tiles</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <a href="./nodes/GetDistanceRatio.html">Get Distance Ratio</a>
             </td>
           </tr>
@@ -225,7 +250,7 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetLoadedTiles.html">Get Loaded Tiles</a>
+              <a href="./nodes/GetGridToWorldLocation.html">Get Grid to World Location</a>
             </td>
           </tr>
           <tr>
@@ -260,7 +285,12 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetUIToGridRatio.html">Get UITo Grid Ratio</a>
+              <a href="./nodes/GetUILocationRatio.html">Get UILocation Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetUIToGridLocation.html">Get UITo Grid Location</a>
             </td>
           </tr>
           <tr>
@@ -271,6 +301,11 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           <tr>
             <td>
               <a href="./nodes/GetWorldLocationRatio.html">Get World Location Ratio</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetWorldToGridLocation.html">Get World to Grid Location</a>
             </td>
           </tr>
           <tr>
@@ -331,6 +366,11 @@ NOTE: to update the loader every game tick set this variable to be &lt;= 0.0</td
           <tr>
             <td>
               <a href="./nodes/UpdateTickRates.html">Update Tick Rates</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UserSetup.html">User Setup</a>
             </td>
           </tr>
         </tbody>

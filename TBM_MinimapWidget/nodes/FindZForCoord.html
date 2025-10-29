@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/TR/REC-html40">
   <head>
-    <title>Get Loaded Tiles</title>
+    <title>Find ZFor Coord</title>
     <link rel="stylesheet" type="text/css" href="../../css/bpdoc.css" />
   </head>
   <body>
@@ -9,10 +9,10 @@
       <a class="navbar_style">&gt;</a>
       <a class="navbar_style" href="../TBM_MinimapWidget.html">TBM_MinimapWidget</a>
       <a class="navbar_style">&gt;</a>
-      <a class="navbar_style">Get Loaded Tiles</a>
-      <h1 class="title_style">Get Loaded Tiles</h1>
-      <p>Gets the currently displayed grid tiles</p>
-      <img class="node_image_style" src="../img/nd_img_GetLoadedTiles.jpg" />
+      <a class="navbar_style">Find ZFor Coord</a>
+      <h1 class="title_style">Find ZFor Coord</h1>
+      <p>Tries to find the Z coord for the given world location</p>
+      <img class="node_image_style" src="../img/nd_img_FindZForCoord.jpg" />
       <h3 class="title_style">Inputs</h3>
       <table>
         <colgroup>
@@ -24,6 +24,15 @@
             <td>
               <div class="param_name title_style">Target</div>
               <div class="param_type">TBM Minimap Widget Object Reference</div>
+            </td>
+            <td>
+              <p />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param_name title_style">World Location</div>
+              <div class="param_type">Vector</div>
             </td>
             <td>
               <p />
@@ -41,10 +50,10 @@
           <tr>
             <td>
               <div class="param_name title_style">Return Value</div>
-              <div class="param_type">Set of Integers</div>
+              <div class="param_type">Float (double-precision)</div>
             </td>
             <td>
-              <p>Gets the currently displayed grid tiles</p>
+              <p>Tries to find the Z coord for the given world location</p>
             </td>
           </tr>
         </tbody>
