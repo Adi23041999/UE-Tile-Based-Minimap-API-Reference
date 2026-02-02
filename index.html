@@ -238,7 +238,7 @@ Player cannot interact with blips.</td>
               <div class="group_type">TBM</div>
             </td>
             <td width="70%">Uses uniform grid panel to display the grid
-Should be used for grids that can be interacted with (like menu map widgets)</td>
+Note that the panel is prefilled with widgets for each tile so it's not suitable for large grids</td>
           </tr>
           <tr>
             <td width="5%">
@@ -468,7 +468,7 @@ Calling Update functions with empty tags will reset the tags to the specified de
               <table>
                 <tbody>
                   <tr>
-                    <td width="20%" class="prop_type_style">TSubclassOf&lt;UTBM_BlipWidget&gt; </td>
+                    <td width="20%" class="prop_type_style">TSubclassOf&lt;UTBM_BlipWidget&gt;</td>
                     <td width="20%" class="prop_display_name_style">WidgetClass</td>
                     <td width="60%">Default widget of the blip</td>
                   </tr>
@@ -902,7 +902,7 @@ Scale: grid world size (for X and Y it's tile count * tile world radius, Z is ta
                   </tr>
                   <tr>
                     <td width="20%" class="prop_type_style">TSet</td>
-                    <td width="20%" class="prop_display_name_style">BlipTeleport</td>
+                    <td width="20%" class="prop_display_name_style">AltBlipInteraction</td>
                     <td width="60%" />
                   </tr>
                   <tr>
@@ -994,8 +994,18 @@ If false keeps user's panning offset and zoom</td>
                   </tr>
                   <tr>
                     <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">BlipAddDistanceTolerance</td>
+                    <td width="60%">Do not add a blip if the distance from current mouse position to initial add position is bigger than this value</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
                     <td width="20%" class="prop_display_name_style">MarkerAddTime</td>
                     <td width="60%">How much time it takes while holding waypoint add key to add a marker instead</td>
+                  </tr>
+                  <tr>
+                    <td width="20%" class="prop_type_style">float</td>
+                    <td width="20%" class="prop_display_name_style">TouchZoomSpeedMultiplier</td>
+                    <td width="60%">Zooming speed multiplier for touch screens</td>
                   </tr>
                   <tr>
                     <td width="20%" class="prop_type_style">bool</td>
@@ -1518,6 +1528,21 @@ Scale down ratio is a value between 0.0 and 1.0
         <tbody>
           <tr>
             <td width="15%">
+              <div class="param_name title_style">ETBM_BlipInteractionType</div>
+            </td>
+            <td width="60%">
+              <div>ETBM Blip Interaction Type</div>
+            </td>
+            <td width="25%">
+              <pre>Unknown
+Key
+Mouse
+Touch
+ETBM_MAX (ETBM MAX)</pre>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%">
               <div class="param_name title_style">ETBM_BlipReplicationType</div>
             </td>
             <td width="60%">
@@ -1570,6 +1595,7 @@ ETBM_MAX (ETBM MAX)</pre>
               <pre>NotPanning
 MousePanning
 KeyPannning
+TouchZooming
 ETBM_MAX (ETBM MAX)</pre>
             </td>
           </tr>

@@ -22,7 +22,7 @@
       <table>
         <tbody>
           <tr>
-            <td width="20%" class="prop_type_style">TSubclassOf&lt;UUserWidget&gt; </td>
+            <td width="20%" class="prop_type_style">TSubclassOf&lt;UUserWidget&gt;</td>
             <td width="20%" class="prop_display_name_style">BlipToolTipWidgetClass</td>
             <td width="60%">The widget to show when the blip is hovered onto by the cursor. Set to nullptr to disable</td>
           </tr>
@@ -30,6 +30,11 @@
             <td width="20%" class="prop_type_style">bool</td>
             <td width="20%" class="prop_display_name_style">CanInteract</td>
             <td width="60%">Whether the blip can be interacted with (recieve input)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">AltTouchInteractionTime</td>
+            <td width="60%">For touch screens LMB is simulated by a tap and RMB by tap+hold for this amount of time</td>
           </tr>
           <tr>
             <td width="20%" class="prop_type_style">TObjectPtr&lt;UImage&gt;</td>
@@ -69,6 +74,16 @@
             <td width="20%" class="prop_display_name_style">BlipDistanceRatio</td>
             <td width="60%">Current distance from the minimap center to it's border in 0-1 range</td>
           </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">bool</td>
+            <td width="20%" class="prop_display_name_style">HasTouchInteraction</td>
+            <td width="60%">True if user touched the blip and we can interact with it (1st touch enables interaction - second interacts with it)</td>
+          </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">float</td>
+            <td width="20%" class="prop_display_name_style">InteractionTime</td>
+            <td width="60%">The game time of the blip interaction</td>
+          </tr>
         </tbody>
       </table>
       <h2 class="title_style">Nodes</h2>
@@ -76,47 +91,67 @@
         <tbody>
           <tr>
             <td>
-              <a href="./nodes/CanInteract.html">Can Interact</a>
+              <a href="./nodes/CanInteract.html">CanInteract</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/FindBlipImageWidget.html">Event Find Blip Image Widget</a>
+              <a href="./nodes/CanKeyInteract.html">CanKeyInteract</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/HeightSwitchEffect.html">Event Height Switch Effect</a>
+              <a href="./nodes/CanReceiveInput.html">CanReceiveInput</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/SetupBlip.html">Event Setup Blip</a>
+              <a href="./nodes/FindBlipImageWidget.html">Event FindBlipImageWidget</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/SetupBlipToolTip.html">Event Setup Blip Tool Tip</a>
+              <a href="./nodes/HeightSwitchEffect.html">Event HeightSwitchEffect</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetBlipImageWidget.html">Get Blip Image Widget</a>
+              <a href="./nodes/Interact.html">Event Interact</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetBlipName.html">Get Blip Name</a>
+              <a href="./nodes/SetupBlip.html">Event SetupBlip</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetPlayerBlipComponent.html">Get Player Blip Component</a>
+              <a href="./nodes/SetupBlipToolTip.html">Event SetupBlipToolTip</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/UnhandleIfPanningKey.html">Unhandle if Panning Key</a>
+              <a href="./nodes/GetBlipImageWidget.html">GetBlipImageWidget</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetBlipName.html">GetBlipName</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/GetPlayerBlipComponent.html">GetPlayerBlipComponent</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/IsAltInteractionKey.html">IsAltInteractionKey</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/UnhandleIfPanningKey.html">UnhandleIfPanningKey</a>
             </td>
           </tr>
         </tbody>

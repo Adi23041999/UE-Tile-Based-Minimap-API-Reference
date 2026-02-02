@@ -37,9 +37,9 @@
             <td width="60%">The time the user is holding down the blip add key</td>
           </tr>
           <tr>
-            <td width="20%" class="prop_type_style">bool</td>
-            <td width="20%" class="prop_display_name_style">HoldingBlipAddKey</td>
-            <td width="60%">Whether the user is holding down the blip add key</td>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">BlipAddInitialLocation</td>
+            <td width="60%">The initial cursor location when adding a blip</td>
           </tr>
           <tr>
             <td width="20%" class="prop_type_style">FVector2D</td>
@@ -101,6 +101,11 @@
             <td width="20%" class="prop_display_name_style">BlipQueryWidget</td>
             <td width="60%" />
           </tr>
+          <tr>
+            <td width="20%" class="prop_type_style">FVector2D</td>
+            <td width="20%" class="prop_display_name_style">TouchZoomPosition</td>
+            <td width="60%">Position of the second finger on touch screen (for zooming)</td>
+          </tr>
         </tbody>
       </table>
       <h2 class="title_style">Nodes</h2>
@@ -108,12 +113,17 @@
         <tbody>
           <tr>
             <td>
-              <a href="./nodes/ClampPanning.html">Clamp Panning</a>
+              <a href="./nodes/ClampPanning.html">ClampPanning</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/OnPanningStateChanged.html">Event On Panning State Changed</a>
+              <a href="./nodes/AddUserBlip.html">Event AddUserBlip</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="./nodes/OnPanningStateChanged.html">Event OnPanningStateChanged</a>
             </td>
           </tr>
           <tr>
@@ -123,32 +133,32 @@
           </tr>
           <tr>
             <td>
-              <a href="./nodes/UpdateZoom.html">Event Update Zoom</a>
+              <a href="./nodes/UpdateZoom.html">Event UpdateZoom</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetKeyPanningDirMultiplier.html">Get Key Panning Dir Multiplier</a>
+              <a href="./nodes/GetKeyPanningDirMultiplier.html">GetKeyPanningDirMultiplier</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetKeyPanningNavDir.html">Get Key Panning Nav Dir</a>
+              <a href="./nodes/GetKeyPanningNavDir.html">GetKeyPanningNavDir</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/GetPlayerBlipComponent.html">Get Player Blip Component</a>
+              <a href="./nodes/GetPlayerBlipComponent.html">GetPlayerBlipComponent</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/IsPanning.html">Is Panning</a>
+              <a href="./nodes/IsPanning.html">IsPanning</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/IsPanningKey.html">Is Panning Key</a>
+              <a href="./nodes/IsPanningKey.html">IsPanningKey</a>
             </td>
           </tr>
           <tr>
@@ -158,12 +168,12 @@
           </tr>
           <tr>
             <td>
-              <a href="./nodes/UpdatePanningState.html">Update Panning State</a>
+              <a href="./nodes/UpdatePanningState.html">UpdatePanningState</a>
             </td>
           </tr>
           <tr>
             <td>
-              <a href="./nodes/UpdateZoom.html">Update Zoom</a>
+              <a href="./nodes/UpdateZoom.html">UpdateZoom</a>
             </td>
           </tr>
         </tbody>
